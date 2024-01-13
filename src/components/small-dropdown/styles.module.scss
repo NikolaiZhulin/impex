@@ -1,0 +1,59 @@
+@import '@styles/helpers/all';
+
+.smallDropdown {
+  color: #ABAFB1;
+  height: $x52;
+  width: $x100;
+
+  svg {
+    fill: #636363;
+    height: $x24;
+    width: $x24;
+
+    path {
+      fill: #636363;
+    }
+  }
+
+  :global {
+    .select__control {
+      padding: $x8 $x10 $x8 $x16;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .smallDropdown {
+    height: $m52;
+    width: $m100;
+
+    svg {
+      height: $m24;
+      width: $m24;
+    }
+
+    :global {
+      .select__control {
+        padding: $m8 $m10 $m8 $m16;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .smallDropdown {
+    height: $s52;
+    width: 24vw;
+
+    svg {
+      height: $s24;
+      width: $s24;
+    }
+
+    :global {
+      .select__control {
+        padding: $s8 $s10 $s8 $s16;
+      }
+    }
+  }
+}

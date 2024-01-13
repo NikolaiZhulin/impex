@@ -1,0 +1,41 @@
+@import '@styles/helpers/all';
+
+.container {
+  @include dFlex();
+  background: linear-gradient(270deg, rgba(67, 47, 147, 0) 4.32%, rgba(55, 32, 147, 0.27) 97.37%);
+  border-image: linear-gradient(#909CFF, #E270FF);
+  border-image-slice: 1;
+  border-left: $x2 solid;
+  padding: $x12 $x16;
+  width: fit-content;
+
+  .text {
+    color: #7B88FF;
+    font-size: $x14;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-left: $m2 solid;
+    padding: $m16 $m20;
+
+    .text {
+      font-size: $m16;
+    }
+  }
+
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-left: $s2 solid;
+    padding: $s12 $s16;
+
+    .text {
+      font-size: $s14;
+    }
+  }
+}

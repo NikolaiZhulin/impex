@@ -1,0 +1,50 @@
+@import '@styles/helpers/all';
+
+.box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: var(--app-height);
+  overflow: hidden;
+  position: relative;
+
+  .nav {
+    z-index: 1000;
+  }
+
+  .header {
+    z-index: 10;
+  }
+
+  .main {
+    flex: 1 0 auto;
+    margin-left: $x180;
+    margin-right: $x180;
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer {
+    flex: 0 0 auto;
+    z-index: 0;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .box {
+    .main {
+      margin-left: $m30;
+      margin-right: $m30;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .box {
+    .main {
+      margin-left: $s16;
+      margin-right: $s16;
+    }
+  }
+}

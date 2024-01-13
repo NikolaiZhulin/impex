@@ -1,0 +1,105 @@
+@import '@styles/helpers/all';
+
+.cardContainer {
+  @include dFlex(flex-start, flex-start);
+  gap: $x24;
+
+  .numbWrapper {
+    position: relative;
+
+    .numbBg {
+      height: $x92;
+      width: $x92;
+    }
+
+    .numb {
+      color: #7B88FF;
+      font-size: $x34;
+      font-style: normal;
+      font-weight: 700;
+      left: 50%;
+      line-height: 140%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x14;
+
+    .title {
+      @include h4();
+    }
+
+    .text {
+      @include smallDescription();
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .cardContainer {
+    @include dFlex(center, flex-start);
+    gap: $x24;
+
+    .numbWrapper {
+      .numbBg {
+        height: $m72;
+        width: $m72;
+      }
+
+      .numb {
+        font-size: $m24;
+      }
+    }
+
+    .textWrapper {
+      gap: $m12;
+
+      .text {
+        width: 41.406vw;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .cardContainer {
+    column-gap: $s12;
+    display: grid;
+    grid-template-areas: 'numbWrapper title'
+      'text text';
+    grid-template-columns: $s48 auto;
+    row-gap: $s2;
+
+    .numbWrapper {
+      grid-area: numbWrapper;
+
+      .numbBg {
+        height: $s48;
+        width: $s48;
+      }
+
+      .numb {
+        font-size: $s18;
+        line-height: 140%;
+      }
+    }
+
+    .textWrapper {
+      display: contents;
+
+      .title {
+        grid-area: title;
+      }
+
+      .text {
+        grid-area: text;
+        width: 100%;
+      }
+    }
+  }
+}

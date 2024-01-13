@@ -1,0 +1,276 @@
+@import '@styles/helpers/all';
+
+.footer {
+  @include dFlex(center,flex-start);
+  background: transparent;
+  flex-direction: column;
+  height: $x400;
+  overflow: hidden;
+  position: relative;
+
+
+  .footerContent {
+    border-bottom: 1px solid #2B2B2B;
+    display: flex;
+    padding-bottom: $x54;
+    padding-top: $x64;
+    width: $x1560;
+  }
+
+  .logoWrapper {
+    @include dFlex(flex-start,flex-start);
+    flex-direction: column;
+    gap: $x30;
+
+    .companyInfo {
+      color: #C0C0C0;
+      font-size: $x16;
+      font-weight: 400;
+      line-height: 140%;
+      max-width: $x170;
+    }
+  }
+
+  .infoBlock {
+    @include dFlex(flex-start);
+    gap: $x108;
+    margin-left: $x227;
+    position: relative;
+    z-index: 100;
+
+    .infoItem {
+      @include dFlex(flex-start, flex-start);
+      flex-direction: column;
+      gap: $x18;
+    }
+
+    .infoItemTitle {
+      color: #636363;
+      font-size: $x18;
+      font-weight: 400;
+      line-height: $x24;
+      text-transform: uppercase;
+    }
+
+    .infoItemText {
+      @include transition();
+      color: #C0C0C0;
+      font-size: $x18;
+      font-weight: 400;
+      line-height: $x24;
+
+      &:hover {
+        color: #909CFF;
+      }
+    }
+  }
+
+  .bottomBlock {
+    @include dFlex();
+    color: #636363;
+    font-size: $x16;
+    height: $x85;
+
+    .companyInfo {
+      display: none;
+    }
+  }
+
+  .backgroundEllipse1 {
+    background: rgba(205, 21, 251, 0.34);
+    border-radius: 45.469vw;
+    bottom: 0;
+
+    filter: blur(6.51vw);
+    height: 6.25vw;
+    left: 6.771vw;
+    position: absolute;
+    width: 45.469vw;
+  }
+
+  .backgroundEllipse2 {
+    background: rgba(52, 62, 255, 0.34);
+    border-radius: 36.977vw;
+    bottom: -$x45;
+    filter: blur(6.51vw);
+    height: 6.25vw;
+    position: absolute;
+    right: 8.438vw;
+    width: 36.979vw;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .footer {
+    height: $m416;
+
+    .footerContent {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: $m38;
+      padding-top: $m38;
+      width: $m708;
+    }
+
+    .logoWrapper {
+      gap: 0;
+
+      .companyInfo {
+        display: none;
+      }
+    }
+
+    .infoBlock {
+      @include dFlex(flex-start,flex-start);
+      gap: $m40;
+      margin-left: 0;
+      margin-top: $m36;
+
+      .infoItem {
+        @include dFlex(flex-start, flex-start);
+        flex-direction: column;
+        gap: $m14;
+      }
+
+      .infoItemTitle {
+        font-size: $m16;
+        line-height: $m24;
+      }
+
+      .infoItemText {
+        font-size: $m16;
+        line-height: $m24;
+      }
+
+    }
+
+    .bottomBlock {
+      @include dFlex(flex-start, flex-start);
+      font-size: $m14;
+      height: $m108;
+      padding-top: $m20;
+      width: $m708;
+
+      .companyInfo {
+        display: block;
+        max-width: $m149;
+      }
+
+      .bottomText {
+        margin-left: $m118;
+      }
+    }
+
+    .backgroundEllipse1 {
+      border-radius: 102.083vw;
+      bottom: 0;
+      filter: blur(22.786vw);
+      height: 10.938vw;
+      left: $m6;
+      width: 102.083vw;
+    }
+
+    .backgroundEllipse2 {
+      background: rgba(52, 62, 255, 0.34);
+      border-radius: 92.318vw;
+      bottom: -3.906vw;
+
+      filter: blur(16.276vw);
+      height: 16.927vw;
+      right: 3.646vw;
+      width: 92.318vw;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .footer {
+    height: $s496;
+
+    .footerContent {
+      padding-bottom: $s28;
+      padding-top: $s30;
+      width: $s345;
+    }
+
+    .infoBlock {
+      display: grid;
+      gap: $s24;
+      grid-template-areas: 'companies contacts'
+        'legality legality';
+      grid-template-columns: 1fr 1fr;
+      margin-left: 0;
+      margin-top: $s28;
+
+      :nth-child(1) {
+        grid-area: companies;
+      }
+
+      :nth-child(2) {
+        grid-area: legality;
+      }
+
+      :nth-child(3) {
+        grid-area: contacts;
+      }
+
+      .infoItem {
+        @include dFlex(flex-start, flex-start);
+        flex-direction: column;
+        gap: $s12;
+      }
+
+      .infoItemTitle {
+        font-size: $s16;
+        line-height: $s24;
+      }
+
+      .infoItemText {
+        font-size: $s15;
+        font-weight: 300;
+        line-height: 140%;
+      }
+
+    }
+
+    .bottomBlock {
+      @include dFlex(flex-start, flex-start);
+      flex-direction: column;
+      font-size: $s14;
+      gap: $s12;
+      height: $s106;
+      padding-bottom: $s16;
+      padding-top: $s16;
+      width: $s345;
+
+      .companyInfo {
+        line-height: 140%;
+        max-width: $s149;
+      }
+
+      .bottomText {
+        line-height: 140%;
+        margin-left: 0;
+      }
+    }
+
+    .backgroundEllipse1 {
+      border-radius: 140.267vw;
+      bottom: 25.867vw;
+      filter: blur(33.333vw);
+      height: 22.267vw;
+      left: -$s75;
+      width: 140.267vw;
+    }
+
+    .backgroundEllipse2 {
+      background: rgba(52, 62, 255, 0.34);
+      border-radius: 141.082vw;
+      bottom: 0;
+      filter: blur(21.333vw);
+      height: 26.933vw;
+      right: 21.333vw;
+      width: 141.067vw;
+    }
+  }
+}

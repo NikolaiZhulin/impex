@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'media';
+
+@mixin dFlex($ai: center, $jc: center) {
+  align-items: $ai;
+  display: flex;
+  justify-content: $jc;
+}
+
+@mixin transition($prop: all, $ms: 300ms, $ease: ease-out) {
+  transition: $prop $ms $ease;
+}
+
+@mixin scrollBar($track, $thumb) {
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+    border-radius: 100px;
+  }
+}
+
+@mixin globalScrollBar() {
+
+  @media (pointer: fine) {
+    &::-webkit-scrollbar {
+      width: 0.521vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      opacity: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.104vw;
+      box-shadow: inset 0.521vw 0.521vw 0.521vw 0.521vw #7B88FF;
+    }
+  }
+}

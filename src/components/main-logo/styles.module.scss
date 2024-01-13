@@ -1,0 +1,71 @@
+@import '@styles/helpers/all';
+
+.mainLogo {
+  @include dFlex(center, flex-end);
+  gap: $x6;
+  height: $x86;
+  position: relative;
+  width: 8.125vw;
+
+  .logoIcon {
+    height: 20.625vw;
+    left: -105%;
+    position: absolute;
+    top: -180%;
+    width: 20.938vw;
+  }
+
+  .text {
+    color: $mainWhite;
+    font-family: 'Tektur';
+    font-size: $x22;
+    font-weight: 500;
+    line-height: $x24;
+    max-width: $x76;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .mainLogo {
+    gap: $m6;
+    height: $m56;
+    width: 17.969vw;
+
+    .logoIcon {
+      height: 38.99vw;
+      left: -83%;
+      top: -215%;
+      width: 39.12vw;
+    }
+
+    .text {
+      font-size: $m20;
+      line-height: $m21;
+      max-width: $m70;
+    }
+  }
+
+}
+
+@include media-breakpoint-down($w600) {
+  .mainLogo {
+    gap: $s4;
+    height: $s42;
+    width: 27.2vw;
+
+    .logoIcon {
+      height: 68.533vw;
+      left: -101%;
+      top: -260%;
+      width: 69.333vw;
+    }
+
+    .text {
+      font-size: $s14;
+      line-height: $s16;
+      max-width: $s48;
+    }
+  }
+}

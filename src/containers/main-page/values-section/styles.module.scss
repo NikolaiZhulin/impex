@@ -1,0 +1,37 @@
+@import '@styles/helpers/all';
+
+.container {
+  padding: $x88 0 $x106 0;
+  position: relative;
+  width: 100%;
+
+  .cardsContainer {
+    @include dFlex(flex-start,flex-start);
+    gap: $x24;
+    margin-top: $x72;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    padding: $m46 0 $m60 0;
+
+    .cardsContainer {
+      flex-wrap: wrap;
+      gap: $m24;
+      margin-top: $m64;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    padding: $s48 0 $s36 0;
+
+    .cardsContainer {
+      flex-direction: column;
+      gap: $s18;
+      margin-top: $s32;
+    }
+  }
+}

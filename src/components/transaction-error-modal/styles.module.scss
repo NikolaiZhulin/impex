@@ -1,0 +1,145 @@
+@import '@styles/helpers/all';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    @include h3();
+  }
+
+  .transactionInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x24;
+    margin-top: $x34;
+  }
+
+  .subTitle {
+    @include smallDescription();
+    font-size: $x16;
+    text-transform: uppercase;
+  }
+
+  .infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: $x8;
+
+    .info {
+      @include smallDescription();
+      color: #C0C0C0;
+    }
+
+    &.managerComment {
+      background: #080808;
+      border: 1px solid #2B2B2B;
+      border-radius: $x6;
+      padding: $x16;
+    }
+  }
+
+  .tableWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x12;
+    margin-top: $x30;
+
+    .tableHeadText {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  .buttonsWrapper {
+    display: flex;
+    gap: $x24;
+    margin-top: $x56;
+
+    >button {
+      flex: 1;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    overflow-y: auto;
+
+    .transactionInfoWrapper {
+      gap: $m24;
+      margin-top: $m44;
+    }
+
+    .title {
+      font-size: $m26;
+    }
+
+    .subTitle {
+      font-size: $m16;
+    }
+
+    .infoItem {
+      gap: $m8;
+
+      &.managerComment {
+        border-radius: $m6;
+        padding: $m16;
+      }
+    }
+
+    .tableWrapper {
+      gap: $m12;
+      margin-top: $m30;
+    }
+
+    .buttonsWrapper {
+      gap: $m24;
+      margin-top: $m56;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    .transactionInfoWrapper {
+      gap: $s20;
+      margin-top: $s26;
+    }
+
+    .title {
+      font-size: $s20;
+    }
+
+    .subTitle {
+      font-size: $s16;
+    }
+
+    .infoItem {
+      gap: $s8;
+
+      &.managerComment {
+        border-radius: $s6;
+        padding: $s16;
+      }
+    }
+
+    .tableWrapper {
+      gap: $s4;
+      margin-top: $s20;
+
+      .tableHeadText {
+        flex-direction: column;
+        gap: $s10;
+      }
+    }
+
+    .buttonsWrapper {
+      flex-direction: column-reverse;
+      gap: $s16;
+      margin-top: $s42;
+    }
+  }
+}

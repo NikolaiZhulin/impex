@@ -1,0 +1,43 @@
+@import '@styles/helpers/all';
+
+.link {
+  @include dFlex();
+  color: $mainWhite;
+  font-size: $x18;
+  line-height: 140%;
+  padding: $x30;
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+
+  &::before {
+    @include transition(opacity);
+    background: linear-gradient(180deg, rgba(67, 47, 147, 0) 0.36%, rgba(42, 32, 147, 0.27) 99.64%);
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &.active {
+    background: linear-gradient(180deg, rgba(67, 47, 147, 0) 0.36%, rgba(42, 32, 147, 0.27) 99.64%);
+
+    &::after {
+      background: linear-gradient(91deg, #909CFF -1.68%, #E270FF 116.85%);
+      bottom: 0;
+      content: '';
+      height: $x2;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

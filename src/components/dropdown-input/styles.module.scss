@@ -1,0 +1,25 @@
+@import '@styles/helpers/all';
+
+.container {
+  .input {
+    padding-right: $x170;
+  }
+}
+
+
+
+@include media-breakpoint-down($w860) {
+  .container {
+    .input {
+      padding-right: 21.484vw;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    .input {
+      padding-right: 32.933vw;
+    }
+  }
+}

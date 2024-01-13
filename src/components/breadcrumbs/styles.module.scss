@@ -1,0 +1,57 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  margin-top: $x18;
+
+  .link {
+    align-items: center;
+    color: #636363;
+    display: flex;
+    font-family: Ubuntu;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    gap: $x8;
+    line-height: $x24;
+    text-transform: uppercase;
+
+    &.lastLink {
+      color: #909CFF;
+      margin-left: $x8;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    margin-top: $m18;
+
+    .link {
+      font-size: $m14;
+      gap: $m8;
+      line-height: $m24;
+
+      &.lastLink {
+        margin-left: $m8;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    margin-top: $s10;
+
+    .link {
+      font-size: $s13;
+      gap: $s8;
+      line-height: $s24;
+
+      &.lastLink {
+        margin-left: $s8;
+      }
+    }
+  }
+}

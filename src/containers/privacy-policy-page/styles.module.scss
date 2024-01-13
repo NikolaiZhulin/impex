@@ -1,0 +1,93 @@
+@import '@styles/helpers/all';
+
+.container {
+  margin-bottom: $x100;
+
+  .mainTitle {
+    @include h1();
+    margin-top: $x74;
+  }
+
+  .pointsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $x50;
+    margin-top: $x96;
+  }
+
+  .point {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+
+    .pointTitle {
+      @include h3();
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+  }
+
+  p {
+    @include smallDescription();
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    margin-bottom: $m95;
+
+    .mainTitle {
+      margin-top: $m48;
+    }
+
+    .pointsContainer {
+      gap: $m40;
+      margin-top: $m48;
+    }
+
+    .point {
+      gap: $m20;
+    }
+
+    .textContainer {
+      gap: $m20;
+    }
+
+    p {
+      font-size: $m18;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    margin-bottom: $s78;
+
+    .mainTitle {
+      font-size: $s27;
+      font-weight: 500;
+      margin-top: $s34;
+    }
+
+    .pointsContainer {
+      gap: $s30;
+      margin-top: $s34;
+    }
+
+    .point {
+      gap: $s16;
+    }
+
+    .textContainer {
+      gap: $s16;
+    }
+
+    p {
+      font-size: $s15;
+    }
+  }
+}

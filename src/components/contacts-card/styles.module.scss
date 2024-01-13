@@ -1,0 +1,85 @@
+@import '@styles/helpers/all';
+
+.cardContainer {
+  @include dFlex(flex-start, space-between);
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x16;
+  flex-direction: column;
+  height: 15.313vw;
+  overflow: hidden;
+  padding: $x46 $x42 $x42;
+  position: relative;
+  width: $x1560;
+
+  .icon {
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 14.594vw;
+  }
+
+  .title {
+    @include h4();
+  }
+
+  .text {
+    @include smallDescription();
+    margin-top: $x16;
+  }
+
+  .ornament {
+    height: 17.031vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19.479vw;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .cardContainer {
+    border-radius: $m16;
+    height: 54.688vw;
+    padding: $m30 $m18;
+    width: 44.531vw;
+
+    .icon {
+      bottom: 0;
+      height: auto;
+      right: 0;
+      top: unset;
+      width: 17.672vw;
+    }
+
+    .ornament {
+      bottom: 0;
+      height: 38.672vw;
+      position: absolute;
+      right: 0;
+      top: unset;
+      transform: rotateX(180deg);
+      width: 44.271vw;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .cardContainer {
+    border-radius: $s16;
+    height: 97.6vw;
+    padding: $s20 $s18 $s33;
+    width: 100%;
+
+    .icon {
+      bottom: $s10;
+      width: 44vw;
+    }
+
+    .ornament {
+      height: 79.2vw;
+      width: 90.667vw;
+    }
+  }
+}

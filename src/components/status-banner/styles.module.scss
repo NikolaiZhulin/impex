@@ -1,0 +1,77 @@
+@import '@styles/helpers/all';
+
+.bannerContainer {
+  @include smallDescription();
+  @include transition();
+  align-items: center;
+  border-radius: $x4;
+  color: #080808;
+  display: inline-flex;
+  font-size: $x16;
+  justify-content: space-between;
+  padding: $x6 $x16;
+  width: 8.229vw;
+
+  .icon {
+    height: $x24;
+    width: $x24;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &.error {
+    background-color: #FF8787;
+
+    &:hover {
+      background-color: #E75858;
+    }
+  }
+
+  &.completed {
+    background-color: #95E59B;
+
+    &:hover {
+      background-color: #5DCF66;
+    }
+  }
+
+  &.processing {
+    background-color: #FFD294;
+
+    &:hover {
+      background-color: #FFC77A;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .bannerContainer {
+    border-radius: $m4;
+    font-size: $m16;
+    padding: $m6 $m16;
+
+    width: 19.792vw;
+
+    .icon {
+      height: $m24;
+      width: $m24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .bannerContainer {
+    border-radius: $s4;
+    font-size: $s16;
+    padding: $s6 $s16;
+
+    width: 40.533vw;
+
+    .icon {
+      height: $s24;
+      width: $s24;
+    }
+  }
+}

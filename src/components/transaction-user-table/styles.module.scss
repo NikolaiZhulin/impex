@@ -1,0 +1,170 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: #080808;
+  border: 1px solid #2B2B2B;
+  border-radius: $x6;
+  display: flex;
+  max-height: 22.24vw;
+  overflow: auto;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+
+    &.firstColumn {
+      width: 13.958vw;
+    }
+
+    &.secondColumn {
+      width: 12.344vw;
+    }
+
+    &.thirdColumn {
+      flex: 1;
+    }
+  }
+
+  .topRow {
+    align-items: center;
+    border-bottom: 1px solid #2B2B2B;
+    color: #FFF;
+    display: flex;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 700;
+    height: $x56;
+    line-height: $x24;
+
+    &:first-child {
+      padding-left: $x20;
+    }
+  }
+
+  .value {
+    align-items: center;
+    color: #93929D;
+    display: inline-flex;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 400;
+    gap: $x6;
+    height: $x52;
+    line-height: $x24;
+    padding-left: $x20;
+
+    &:first-child {
+      padding-left: $x20;
+    }
+
+    .icon {
+      height: $x22;
+      width: $x22;
+    }
+  }
+
+  .wallet {
+    border-bottom: 1px solid #93929D;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m6;
+    max-height: unset;
+
+    .column {
+      &.firstColumn {
+        width: 23.568vw;
+      }
+
+      &.secondColumn {
+        width: 24.87vw;
+      }
+
+      &.thirdColumn {
+        width: 15.365vw;
+      }
+
+      &.fourthColumn {
+        width: 20.703vw;
+      }
+    }
+
+    .topRow {
+      font-size: $m16;
+      height: $m56;
+      line-height: $m24;
+
+      &:first-child {
+        padding-left: $m20;
+      }
+    }
+
+    .value {
+      font-size: $m16;
+      gap: $m6;
+      height: $m52;
+      line-height: $m24;
+      padding-left: $m20;
+
+      .icon {
+        height: $m22;
+        width: $m22;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s6;
+    flex-direction: column;
+    gap: $s16;
+    padding: $s14 $s16 $s16;
+
+    .column {
+      gap: $s10;
+
+      &.firstColumn {
+        width: 100%;
+      }
+
+      &.secondColumn {
+        width: 100%;
+      }
+
+      &.thirdColumn {
+        width: 100%;
+      }
+
+      &.fourthColumn {
+        width: 100%;
+      }
+    }
+
+    .topRow {
+      border-bottom: unset;
+      font-size: $s16;
+      height: unset;
+      line-height: $s24;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    .value {
+      font-size: $s16;
+      gap: $s6;
+      height: unset;
+      line-height: $s24;
+      padding-left: 0;
+
+      .icon {
+        height: $s22;
+        width: $s22;
+      }
+    }
+  }
+}

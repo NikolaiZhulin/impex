@@ -1,0 +1,108 @@
+@import '@styles/helpers/all';
+
+.container {
+  padding: $x88 0 $x48 0;
+  position: relative;
+  width: 100%;
+
+  .cardsContainer {
+    @include dFlex(center,flex-start);
+    background-image: url('/images/how-to-exchange/bg-line-desktop.svg');
+    background-position: top 0 left (-$x8);
+    background-repeat: no-repeat;
+    background-size: $x1560 15.573vw;
+    gap: $x60;
+    height: 15.573vw;
+    margin-top: $x160;
+    padding: $m28 0 $m36 0;
+    position: relative;
+    width: $x1560;
+  }
+
+  .ethereumIcon {
+    height: 20.833vw;
+    position: absolute;
+    right: $x80;
+    top: -$x76;
+    width: 12.292vw;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    padding: $m46 0 $m66 0;
+
+    .cardsContainer {
+      @include dFlex(flex-start,center);
+      background-image: url('/images/how-to-exchange/bg-line-tablet.svg');
+      background-position: top 0 right 0;
+      background-repeat: no-repeat;
+      background-size: 92.188vw 61.198vw;
+      flex-direction: column;
+      gap: $m80;
+      height: 61.198vw;
+      margin-top: $m60;
+      padding: $m28 0 $m36 0;
+      width: 92.188vw;
+
+      .card {
+        &:first-child {
+          margin-left: $m45;
+        }
+
+        &:nth-child(2) {
+          margin-left: 32.161vw;
+        }
+
+        &:nth-child(3) {
+          margin-left: $m45;
+        }
+      }
+    }
+
+    .ethereumIcon {
+      height: 35.677vw;
+      position: absolute;
+      right: 0;
+      top: $m32;
+      width: 20.964vw;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    padding: $s48 0 $s36 0;
+
+    .cardsContainer {
+      background-image: url('/images/how-to-exchange/bg-line-mobile.svg');
+      background-position: top 0 left 0;
+      background-repeat: no-repeat;
+      background-size: 100% 108.267vw;
+      gap: $s50;
+      height: 108.267vw;
+      margin-top: $s42;
+      padding: $s14 0;
+      width: 100%;
+
+
+      .card {
+        &:first-child {
+          margin-left: $s20;
+        }
+
+        &:nth-child(2) {
+          margin-left: $s20;
+        }
+
+        &:nth-child(3) {
+          margin-left: $s20;
+        }
+      }
+    }
+
+    .ethereumIcon {
+      display: none;
+    }
+  }
+}

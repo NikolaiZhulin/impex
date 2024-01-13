@@ -1,0 +1,52 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  gap: $x6;
+
+  .icon {
+    height: $x22;
+    width: $x22;
+  }
+
+  > span {
+    color: #93929D;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $x24;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    gap: $m6;
+
+    .icon {
+      height: $m22;
+      width: $m22;
+    }
+
+    > span {
+      font-size: $m16;
+      line-height: $m24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    gap: $s6;
+
+    .icon {
+      height: $s22;
+      width: $s22;
+    }
+
+    > span {
+      font-size: $s16;
+      line-height: $s24;
+    }
+  }
+}

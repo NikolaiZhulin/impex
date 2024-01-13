@@ -1,0 +1,54 @@
+@import '@styles/helpers/all';
+
+.button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid  #F2F3F7;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: $x40;
+  justify-content: center;
+  width: $x40;
+
+  .arrowIcon {
+    height: $x24;
+    width: $x24;
+
+    &.left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.disabled {
+    border-color: #636363;
+
+    svg path {
+      fill: #636363;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .button {
+    height: $m40;
+    width: $m40;
+
+    .arrowIcon {
+      height: $m24;
+      width: $m24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .button {
+    height: $s40;
+    width: $s40;
+
+    .arrowIcon {
+      height: $s24;
+      width: $s24;
+    }
+  }
+}

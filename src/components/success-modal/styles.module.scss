@@ -1,0 +1,81 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    @include h3();
+    font-size: $x38;
+    margin-top: $x52;
+    text-align: center;
+  }
+
+  .subTitle {
+    @include smallDescription();
+    font-size: $x20;
+    margin-top: $x24;
+    text-align: center;
+  }
+
+  .image {
+    height: 17.229vw;
+    margin-top: -$x20;
+    width: 21.229vw;
+  }
+
+  .button {
+    margin-top: $x60;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    .title {
+      font-size: $m32;
+      margin-top: $m36;
+    }
+
+    .subTitle {
+      font-size: $m20;
+      margin-top: $m18;
+    }
+
+    .image {
+      height: 40.229vw;
+      margin-top: -$m10;
+      width: 51.229vw;
+    }
+
+    .button {
+      margin-top: $m100;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    .title {
+      font-size: $s22;
+      margin-top: $s24;
+    }
+
+    .subTitle {
+      font-size: $s16;
+      margin-top: $s16;
+      width: 61.6vw;
+    }
+
+    .image {
+      height: 55.229vw;
+      margin-top: -$m10;
+      width: 71.229vw;
+    }
+
+    .button {
+      margin-top: $s30;
+    }
+  }
+}

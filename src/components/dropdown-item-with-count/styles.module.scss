@@ -1,0 +1,44 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .count {
+    align-items: center;
+    background: #E03939;
+    border-radius: $x100;
+    color: #FFF;
+    display: flex;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    line-height: $x20;
+    padding: $x2 $x8;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    .count {
+      border-radius: $m100;
+      font-size: $m14;
+      line-height: $m20;
+      padding: $m2 $m8;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    .count {
+      border-radius: $s100;
+      font-size: $s14;
+      line-height: $s20;
+      padding: $s2 $s8;
+    }
+  }
+}

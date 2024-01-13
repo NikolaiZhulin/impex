@@ -1,0 +1,125 @@
+@import '@styles/helpers/all';
+
+.container {
+  font-family: $defaultFontFamily;
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  &.containerError {
+    .textarea {
+      border-color: #FF636C;
+    }
+  }
+}
+
+.textarea {
+  background-color: #080808;
+  border: 1px solid #2B2B2B;
+  border-radius: 0.417vw;
+  caret-color: $mainWhite;
+  color: $mainWhite;
+  font-family: Ubuntu;
+  font-size: $x18;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  line-height: $x24;
+  min-height: 4.323vw;
+  outline: none;
+  overflow: hidden;
+
+  padding: $x12 $x24;
+
+  resize: none;
+
+  transition: border-color 250ms ease-out;
+  width: 100%;
+
+  &::placeholder {
+    color: #636363;
+  }
+
+  &:placeholder-shown ~ .label {
+    cursor: text;
+  }
+
+  &:hover {
+    border-color: #636363;
+  }
+
+
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    border-color: #636363;
+  }
+
+  &:not(:focus) ~ .label,
+  &:not(:focus-visible) ~ .label,
+  &:not(:focus-within) ~ .label {
+    color: #2B2B2B;
+  }
+
+  &:hover ~ .label {
+    color: #636363;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: $mainWhite;
+    transition: background-color 5000s ease-in-out 0s, border 250ms ease-out;
+  }
+
+  &:-webkit-autofill {
+    border: 1px solid #2B2B2B;
+  }
+
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    border: 1px solid  #2B2B2B;
+  }
+}
+
+.label {
+  color: #93929D;
+  font-size: $x18;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  position: relative;
+  top: -$x4;
+}
+
+@include media-breakpoint-down($w860) {
+  .textarea {
+    border-radius: $m8;
+    font-size: $m16;
+    line-height: $m24;
+    min-height: $m76;
+    padding: $m12 $m24;
+
+  }
+
+  .label {
+    font-size: $m16;
+    top: -$m4;
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .textarea {
+    border-radius: $s8;
+    font-size: $s14;
+    line-height: $s20;
+    min-height: 18.667vw;
+    padding: $s10 $s12;
+  }
+
+  .label {
+    font-size: $s14;
+    top: -$s4;
+  }
+}

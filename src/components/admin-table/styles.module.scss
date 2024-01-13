@@ -1,0 +1,22 @@
+@import '@styles/helpers/all';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $x16;
+  margin-top: $x25;
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    gap: $m16;
+    margin-top: $m22;
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    gap: $s16;
+    margin-top: $s12;
+  }
+}

@@ -1,0 +1,192 @@
+@import '@styles/helpers/all';
+
+.container {
+  border: 1px solid #2B2B2B;
+  border-radius: $x6;
+  font-size: $x16;
+  max-height: 22.24vw;
+  overflow: auto;
+
+
+  &::-webkit-scrollbar {
+    width: $x3;
+  }
+
+  table {
+    background: #080808;
+    overflow: auto;
+    width: 100%;
+
+    thead {
+      tr {
+        border-bottom: 1px solid #2B2B2B;
+        height: $x56;
+      }
+
+      th {
+        text-align: start;
+
+        &:first-child {
+          padding-left: $x20;
+        }
+
+        &:last-child {
+          padding-right: $x20;
+          text-align: end;
+
+        }
+      }
+    }
+
+    tbody {
+      color: #93929D;
+
+      tr {
+        border-bottom: 1px solid #2B2B2B;
+        height: $x53;
+      }
+
+      td {
+        text-align: start;
+
+        &:first-child {
+          padding-left: $x20;
+        }
+
+        &:last-child {
+          padding-right: $x20;
+          text-align: end;
+
+        }
+      }
+    }
+  }
+
+
+  .currencyCell {
+    align-items: center;
+    display: flex;
+    gap: $x6;
+
+    img {
+      height: $x22;
+      width: $x22;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m6;
+    font-size: $m16;
+    max-height: 55.599vw;
+
+
+    &::-webkit-scrollbar {
+      width: $m4;
+    }
+
+    table {
+      thead {
+        tr {
+          height: $m56;
+        }
+
+        th {
+          &:first-child {
+            padding-left: $m20;
+          }
+
+          &:last-child {
+            padding-right: $m20;
+
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          height: $m53;
+        }
+
+        td {
+          &:first-child {
+            padding-left: $m20;
+          }
+
+          &:last-child {
+            padding-right: $m20;
+          }
+        }
+      }
+    }
+
+
+    .currencyCell {
+      gap: $m6;
+
+      img {
+        height: $m22;
+        width: $m22;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $m6;
+    font-size: $s16;
+    max-height: 113.867vw;
+
+
+    &::-webkit-scrollbar {
+      width: $s4;
+    }
+
+    table {
+      thead {
+        tr {
+          height: $s56;
+        }
+
+        th {
+          &:first-child {
+            padding-left: $s16;
+          }
+
+          &:last-child {
+            padding-right: $s16;
+
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          height: $s52;
+        }
+
+        td {
+          &:first-child {
+            padding-left: $s16;
+          }
+
+          &:last-child {
+            padding-right: $s16;
+          }
+        }
+      }
+    }
+
+
+    .currencyCell {
+      gap: $s6;
+
+      img {
+        height: $s22;
+        width: $s22;
+      }
+    }
+  }
+}

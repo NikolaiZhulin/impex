@@ -1,0 +1,92 @@
+/* stylelint-disable selector-max-id */
+@import 'vendors/normalize';
+@import 'helpers/variables';
+@import 'helpers/grid';
+
+html,
+body,
+#__next {
+  background: $mainBg;
+  color: $mainWhite;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+}
+
+* {
+  @include globalScrollBar();
+}
+
+*,
+*::before,
+*::after {
+  appearance: none;
+  box-sizing: border-box;
+  font-style: normal;
+  outline-style: none;
+  -webkit-touch-callout: none;
+  user-select: initial;
+}
+
+body,
+button {
+  font-family: $defaultFontFamily;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  box-sizing: border-box;
+  font-family: $defaultFontFamily;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input,
+input::before,
+input::after {
+  user-select: initial;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  appearance: none;
+}

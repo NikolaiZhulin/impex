@@ -1,0 +1,155 @@
+@import '@styles/helpers/all';
+
+.container {
+  margin-bottom: $x100;
+
+  .mainTitle {
+    @include h1();
+    margin-top: $x74;
+  }
+
+  .pointsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $x50;
+    margin-top: $x34;
+  }
+
+  .point {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+
+    .pointTitle {
+      @include h3();
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+  }
+
+  p {
+    @include smallDescription();
+  }
+
+  ul {
+    @include smallDescription();
+    list-style-type: none;
+
+    >li {
+      display: flex;
+      margin-left: $x8;
+
+      span {
+        align-items: center;
+        display: flex;
+
+        &::before {
+          @include smallDescription();
+          background: #93929D;
+          border-radius: 50%;
+          content: '';
+          display: block;
+          height: $x6;
+          margin-right: $x6;
+          width: $x6;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    margin-bottom: $m95;
+
+    .mainTitle {
+      margin-top: $m48;
+    }
+
+    .pointsContainer {
+      gap: $m40;
+      margin-top: $m48;
+    }
+
+    .point {
+      gap: $m20;
+    }
+
+    .textContainer {
+      gap: $m20;
+    }
+
+    p {
+      font-size: $m18;
+    }
+
+    ul {
+      font-size: $m18;
+
+      >li {
+        margin-left: $m8;
+
+        span {
+          height: $m26;
+
+          &::before {
+            height: $m6;
+            margin-right: $m6;
+            width: $m6;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    margin-bottom: $s78;
+
+    .mainTitle {
+      font-size: $s27;
+      font-weight: 500;
+      margin-top: $s34;
+    }
+
+    .pointsContainer {
+      gap: $s30;
+      margin-top: $s34;
+    }
+
+    .point {
+      gap: $s16;
+    }
+
+    .textContainer {
+      gap: $s16;
+    }
+
+    p {
+      font-size: $s15;
+    }
+
+    ul {
+      font-size: $s15;
+
+      >li {
+        margin-left: $s8;
+
+        span {
+          height: $s22;
+
+          &::before {
+            height: $s6;
+            margin-right: $s6;
+            width: $s6;
+          }
+        }
+      }
+    }
+  }
+}

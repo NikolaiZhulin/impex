@@ -1,0 +1,111 @@
+@import 'variables';
+@import 'media';
+
+@mixin h1($color: #FFF) {
+  color: $color;
+  font-family: $secondaryFontFamily;
+  font-size: $x70;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m52;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s27;
+    line-height: 100%;
+  }
+}
+
+@mixin h2($color: #FFF) {
+  color: $color;
+  font-family: $secondaryFontFamily;
+  font-size: $x52;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m42;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s22;
+    line-height: 120%;
+  }
+
+}
+
+@mixin h3($color: #F2F3F7) {
+  color: $color;
+  font-family: $secondaryFontFamily;
+  font-size: $x28;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m28;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s22;
+
+  }
+}
+
+@mixin h4($color: #F2F3F7) {
+  color: $color;
+  font-family: $secondaryFontFamily;
+  font-size: $x24;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m22;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s18;
+
+  }
+}
+
+@mixin smallDescription($color: #93929D) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: $x18;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m15;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s15;
+    font-weight: 300;
+  }
+}
+
+@mixin mediumDescription($color: #93929D) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: $x20;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+
+  @include media-breakpoint-down($w860) {
+    font-size: $m18;
+  }
+
+  @include media-breakpoint-down($w600) {
+    font-size: $s15;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,83 @@
+@import '@styles/helpers/all';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $x112;
+  padding-bottom: $x100;
+  position: relative;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-top: $x44;
+
+    .mainTitle {
+      @include h1();
+    }
+
+    .subtitle {
+      @include smallDescription();
+      font-size: $x20;
+    }
+  }
+}
+
+.image {
+  height: 14.792vw;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 15.625vw;
+  width: 39.844vw;
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    flex-direction: column;
+    gap: $m50;
+    margin-top: $m90;
+    padding-bottom: 28.255vw;
+
+    .text {
+      align-items: flex-start;
+      gap: $m24;
+      margin-top: 0;
+
+      .subtitle {
+        @include smallDescription();
+        font-size: $x20;
+      }
+    }
+  }
+
+  .image {
+    bottom: -$m40;
+    height: 34.375vw;
+    top: unset;
+    width: 92.448vw;
+  }
+
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    gap: $s28;
+    margin-top: $s46;
+    padding-bottom: 30.933vw;
+
+    .text {
+      gap: $s16;
+
+      .subtitle {
+        font-size: $s16;
+      }
+    }
+  }
+
+  .image {
+    bottom: -$s20;
+    height: 35.2vw;
+    width: 94.933vw;
+  }
+}

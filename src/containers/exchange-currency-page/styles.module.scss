@@ -1,0 +1,59 @@
+@import '@styles/helpers/all';
+
+.backToHomeLink {
+  color: #909CFF;
+  font-size: $x14;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $x24;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: $x18;
+  position: relative;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $x54;
+    position: relative;
+  }
+}
+
+
+@include media-breakpoint-down($w860) {
+  .backToHomeLink {
+    font-size: $m14;
+    line-height: $m24;
+  }
+
+  .container {
+    margin-top: $m18;
+
+    .content {
+      flex-direction: column;
+      gap: $m24;
+      margin-top: $m38;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .backToHomeLink {
+    font-size: $s13;
+    line-height: $s24;
+  }
+
+  .container {
+    margin-top: $s10;
+
+    .content {
+      gap: $s24;
+      margin-top: $s20;
+
+    }
+  }
+}

@@ -1,0 +1,173 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+
+  .leftBlock {
+    display: flex;
+    flex-direction: column;
+    gap: $x16;
+  }
+
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: $x6;
+  }
+
+  .rightBottomBlock {
+    align-items: flex-end;
+    display: flex;
+    gap: $x16;
+  }
+
+  .filterInput {
+    width: 9.427vw;
+
+    input {
+      background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+    }
+
+    >div {
+      width: unset;
+    }
+  }
+
+  .button {
+    font-size: $x16;
+    height: $x56;
+    margin-left: auto;
+    width: 12.804vw;
+
+    .mobileButtonText {
+      display: none;
+    }
+
+    &.transactionsButton {
+      height: $x52;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $m24;
+    justify-content: space-between;
+    position: relative;
+
+    .requestBanner {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .leftBlock {
+      width: 100%;
+    }
+
+    .rightBlock {
+      display: flex;
+      flex-direction: column;
+      gap: $m16;
+      width: 100%;
+    }
+
+    .rightBottomBlock {
+      align-items: flex-end;
+      display: flex;
+      gap: $m24;
+      justify-content: space-between;
+      width: 100%;
+
+      >* {
+        flex: 1;
+      }
+    }
+
+    .filterInput {
+      width: 9.427vw;
+
+      >div {
+        width: unset;
+      }
+    }
+
+    .button {
+      font-size: $m16;
+      height: $m44;
+      width: 28.906vw;
+
+      &.transactionsButton {
+        height: $m52;
+        max-width: 28.646vw;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $s22;
+    justify-content: space-between;
+    position: relative;
+
+    .requestBanner {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .leftBlock {
+      width: 100%;
+    }
+
+    .rightBlock {
+      display: flex;
+      flex-direction: column;
+      gap: $s14;
+      width: 100%;
+    }
+
+    .rightBottomBlock {
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: $s12;
+    }
+
+    .filterInput {
+      display: flex;
+      width: unset;
+
+      >div {
+        width: unset;
+      }
+    }
+
+    .button {
+      font-size: $s16;
+      height: $s44;
+      width: 42.667vw;
+
+      .mobileButtonText {
+        display: block;
+      }
+
+      .desktopButtonText {
+        display: none;
+      }
+
+      &.transactionsButton {
+        height: $s48;
+        min-width: 100%;
+      }
+    }
+  }
+}

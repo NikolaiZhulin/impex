@@ -1,0 +1,51 @@
+@import '@styles/helpers/all';
+
+.dropdownItem {
+  align-items: center;
+  display: flex;
+  gap: $x8;
+
+  .icon {
+    height: $x26;
+    width: $x26;
+  }
+
+  .text {
+    color: #E6E5E5;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+
+@include media-breakpoint-down($w860) {
+  .dropdownItem {
+    gap: $m8;
+
+    .icon {
+      height: $m26;
+      width: $m26;
+    }
+
+    .text {
+      font-size: $m18;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .dropdownItem {
+    gap: $s8;
+
+    .icon {
+      height: $s26;
+      width: $s26;
+    }
+
+    .text {
+      font-size: $s18;
+    }
+  }
+}

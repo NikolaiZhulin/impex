@@ -1,0 +1,103 @@
+@import '@styles/helpers/all';
+
+.header {
+  @include dFlex(center, space-between);
+  height: $x86;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  .headerContent {
+    @include dFlex(center, flex-start);
+    height: $x86;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: $x1560;
+  }
+
+  .burgerButton {
+    display: none;
+  }
+
+  .headerLinks {
+    margin-left: $x138;
+  }
+
+  .languageDropdown {
+    align-items: center;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: $x18;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .header {
+    height: $m76;
+
+    .headerContent {
+      height: $m76;
+      margin-left: $m30;
+      margin-right: $m30;
+      width: 100vw;
+    }
+
+    .headerLogo {
+      margin-left: $m235;
+    }
+
+    .burgerButton {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      z-index: 100;
+
+      svg {
+        height: $m50;
+        width: $m50;
+      }
+    }
+
+    .headerLinks {
+      display: none;
+    }
+
+    .languageDropdown {
+      right: 0;
+      top: $m18;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .header {
+    height: $s62;
+
+    .headerContent {
+      height: $s62;
+      margin-left: $s15;
+      margin-right: $s15;
+    }
+
+    .headerLogo {
+      margin-left: $s78;
+    }
+
+    .burgerButton {
+      svg {
+        height: $s44;
+        width: $s44;
+      }
+    }
+
+    .languageDropdown {
+      right: 0;
+      top: $s12;
+    }
+  }
+}
+

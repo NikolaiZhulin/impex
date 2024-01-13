@@ -1,0 +1,204 @@
+@import '@styles/helpers/all';
+
+.navBarContainer {
+  display: none;
+}
+
+@include media-breakpoint-down($w860) {
+  .navBarContainer {
+    @include dFlex(flex-start, flex-start);
+    @include transition();
+    background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+    border-right: 1px solid #2B2B2B;
+    flex-direction: column;
+    height: 100vh;
+    height: var(--app-height);
+    left: 0;
+    overflow: hidden;
+    padding: $m28 $m30;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    width: $m616;
+    z-index: 1000;
+
+    &::before {
+      background-image: url('/images/icons/ornament.svg');
+      bottom: 0;
+      content: '';
+      height: 111.719vw;
+      left: 0;
+      position: absolute;
+      width: 127.865vw;
+    }
+
+    &.active {
+      overflow: hidden auto;
+      transform: translateX(0);
+    }
+
+    .navBarHead {
+      @include dFlex();
+      border-bottom: 1px solid #2B2B2B;
+      justify-content: space-between;
+      padding-bottom: $m28;
+      width: 100%;
+
+      .closeButton {
+        color: $mainWhite;
+        height: $m32;
+        position: relative;
+        width: $m32;
+        z-index: 100;
+
+        svg path {
+          @include transition();
+        }
+
+        &:hover {
+          svg path {
+            fill: #909CFF;
+          }
+        }
+      }
+    }
+
+    .nav {
+      margin-top: $m44;
+
+      .navItem {
+        cursor: pointer;
+        height: $m57;
+        padding: $m16 $m14;
+        position: relative;
+        width: $m584;
+        z-index: 1;
+
+        > a {
+          @include transition();
+          @include dFlex(flex-start, flex-start);
+          color: $mainWhite;
+          font-family: 'Ubuntu';
+          font-size: $m18;
+          height: $m57;
+          width: $m584;
+          z-index: 1;
+        }
+
+        &::before {
+          @include transition();
+          background: linear-gradient(270deg, rgba(191, 21, 251, 0) 0.39%, rgba(191, 21, 251, 0.07) 99.71%);
+          content: '';
+          height: $m57;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          width: $m584;
+          z-index: -1;;
+        }
+
+        &:hover {
+          >a {
+            color: #909CFF;
+          }
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .firstCoin {
+      bottom: 39.068vw;
+      height: 26.182vw;
+      position: absolute;
+      right: $m24;
+      width: 31.958vw;
+    }
+
+    .secondCoin {
+      bottom: 17.182vw;
+      height: 28.479vw;
+      position: absolute;
+      right: $m188;
+      width: 21.875vw;
+    }
+
+    .thirdCoin {
+      bottom: $m20;
+      height: $m155;
+      position: absolute;
+      right: 35.021vw;
+      width: 25.479vw;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .navBarContainer {
+    border-right: unset;
+    padding: $s10 $s15;
+    width: 100vw;
+
+    &::before {
+      height: 133.6vw;
+      left: unset;
+      width: 152.8vw;
+    }
+
+    .navBarHead {
+      padding-bottom: $s20;
+
+      .closeButton {
+        height: $s24;
+        width: $s24;
+      }
+    }
+
+    .nav {
+      margin-top: $s35;
+
+      .navItem {
+        height: $s57;
+        padding: $s16 $s14;
+        width: $s345;
+
+        > a {
+          font-size: $s18;
+          height: $s57;
+          width: $s345;
+        }
+
+        &::before {
+          height: $s57;
+          width: $s345;
+        }
+      }
+    }
+
+    .firstCoin {
+      bottom: 35.068vw;
+      height: 35.182vw;
+      right: 7vw;
+      width: 35.958vw;
+    }
+
+    .secondCoin {
+      bottom: 15.182vw;
+      height: 28.479vw;
+      position: absolute;
+      right: 36.182vw;
+      width: 23.875vw;
+    }
+
+    .thirdCoin {
+      bottom: -4vw;
+      height: 25vw;
+      position: absolute;
+      right: 47.021vw;
+      width: 30.479vw;
+    }
+  }
+}

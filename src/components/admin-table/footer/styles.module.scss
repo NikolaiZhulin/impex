@@ -1,0 +1,86 @@
+@import '@styles/helpers/all';
+
+.tableFooter {
+  align-items: center;
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: 0 0 $x16 $x16;
+  border-top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: $x18 $x20 $x16;
+
+  .footerLeftBlock {
+    align-items: center;
+    display: flex;
+    gap: $x40;
+  }
+
+  .tableFooterText {
+    color: #93929D;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .footerRightBlock {
+    align-items: center;
+    display: flex;
+    gap: $x32;
+  }
+
+  .rowSettings {
+    align-items: center;
+    display: flex;
+    gap: $x16;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .tableFooter {
+    align-items: flex-start;
+    border-radius: 0 0 $m12 $m12;
+    flex-direction: column;
+    gap: $m24;
+    padding: $m20 $m20 $m16;
+
+    .footerLeftBlock {
+      gap: $m38;
+    }
+
+    .tableFooterText {
+      font-size: $m18;
+    }
+
+    .footerRightBlock {
+      gap: $m32;
+      justify-content: space-between;
+    }
+
+    .rowSettings {
+      gap: $m16;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .tableFooter {
+    border-radius: 0 0 $s12 $s12;
+    gap: $s16;
+    padding: $s16 $s16 $s20;
+
+    .footerLeftBlock {
+      flex-direction: column;
+      gap: $s6;
+    }
+
+    .tableFooterText {
+      font-size: $s15;
+    }
+
+    .footerRightBlock {
+      display: none;
+    }
+  }
+}

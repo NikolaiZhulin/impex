@@ -1,0 +1,95 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x12;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: $x32 $x32 $x58;
+  width: 46.875vw;
+
+  .title {
+    @include h4();
+  }
+
+  .rulesWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x22;
+    margin-top: $x28;
+  }
+
+  p {
+    @include mediumDescription();
+  }
+
+  a {
+    color: #909CFF;
+  }
+
+  .divider {
+    background: #2B2B2B;
+    height: 1px;
+    margin-bottom: $x40;
+    margin-top: $x52;
+    width: 100%;
+  }
+
+  .bottomText {
+    margin-top: 0;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m12;
+    padding: $m32 $m32 $m35;
+    width: $m708;
+
+    .rulesWrapper {
+      gap: $m16;
+      margin-top: $m24;
+    }
+
+    p {
+      font-size: $m16;
+    }
+
+    .divider {
+      margin-bottom: $m34;
+      margin-top: $m36;
+    }
+
+    .bottomText {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s12;
+    padding: $s20 $s16 $s24;
+    width: $s345;
+
+    .rulesWrapper {
+      gap: $s12;
+      margin-top: $s18;
+    }
+
+    p {
+      font-size: $s15;
+    }
+
+    .divider {
+      margin-bottom: $s16;
+      margin-top: $s18;
+    }
+
+    .bottomText {
+      margin-top: 0;
+    }
+  }
+}

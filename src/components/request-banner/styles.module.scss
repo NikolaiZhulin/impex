@@ -1,0 +1,96 @@
+@import '@styles/helpers/all';
+
+.cardContainer {
+  align-items: center;
+  background: rgba(241, 74, 84, 0.5);
+  border-radius: $x4;
+  display: inline-flex;
+  padding: $x9 $x12 $x8 $x12;
+  width: 13.177vw;
+
+  .text {
+    color: #F2F3F7;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $x24;
+    margin-left: $x6;
+  }
+
+  .closeButton {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .closeIcon {
+    height: $x20;
+    margin-left: $x20;
+    width: $x20;
+  }
+
+  .infoIcon {
+    height: $x24;
+    width: $x24;
+  }
+
+  .textMobile {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .cardContainer {
+
+    border-radius: $m4;
+    padding: $m10 $m12;
+    width: 32.943vw;
+
+    .text {
+      font-size: $m16;
+      line-height: $m24;
+      margin-left: $m6;
+    }
+
+    .closeIcon {
+      height: $m20;
+      margin-left: $m20;
+      width: $m20;
+    }
+
+    .infoIcon {
+      height: $m24;
+      width: $m24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .cardContainer {
+    border-radius: $s4;
+    padding: $s8 $s12;
+    width: 42.933vw;
+
+
+    .text {
+      display: none;
+    }
+
+    .closeIcon {
+      height: $s20;
+      margin-left: $s20;
+      width: $s20;
+    }
+
+    .infoIcon {
+      height: $s24;
+      width: $s24;
+    }
+
+    .textMobile {
+      display: block;
+      font-size: $s14;
+      line-height: $s24;
+      margin-left: $s6;
+    }
+  }
+}

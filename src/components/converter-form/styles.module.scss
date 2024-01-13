@@ -1,0 +1,103 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x12;
+  display: flex;
+  flex-direction: column;
+  width: 33.125vw;
+
+  .tabsWrapper {
+    border-bottom: 1px solid #2B2B2B;
+    border-radius: $x12 $x12 0 0;
+    overflow: hidden;
+  }
+
+  .content {
+    padding: $x20 $x32 $x40;
+  }
+
+  .infoText {
+    color: $mainRed;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x22;
+    margin-top: $x27;
+
+    >:first-child {
+      position: relative;
+      z-index: 1111;
+    }
+  }
+
+  .formButton {
+    margin-top: $x60;
+  }
+
+  .text {
+    @include h2();
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m12;
+    width: 100%;
+
+    .tabsWrapper {
+      border-radius: $m12 $m12 0 0;
+    }
+
+    .content {
+      padding: $m22 $m32 $m40;
+    }
+
+    .infoText {
+      font-size: $m16;
+    }
+
+    .inputsWrapper {
+      gap: $m26;
+      margin-top: $m26;
+    }
+
+    .formButton {
+      margin-top: $m57;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s12;
+
+    .tabsWrapper {
+      border-radius: $s12 $s12 0 0;
+    }
+
+    .content {
+      padding: $s10 $s16 $s20;
+    }
+
+    .infoText {
+      font-size: $s14;
+    }
+
+    .inputsWrapper {
+      gap: $s14;
+      margin-top: $s16;
+    }
+
+    .formButton {
+      margin-top: 14.933vw;
+    }
+  }
+}

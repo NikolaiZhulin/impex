@@ -1,0 +1,58 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x12;
+  padding: $x32 $x32 $x49;
+  width: 40vw;
+
+  .formTitle {
+    @include h3();
+  }
+
+  .inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x37;
+    margin-top: $x52;
+  }
+
+  .submitButton {
+    margin-top: $x82;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m12;
+    padding: $m32 $m32 $m48;
+    width: $m708;
+
+    .inputsWrapper {
+      gap: $m18;
+      margin-top: $m32;
+    }
+
+    .submitButton {
+      margin-top: $m100;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s6;
+    padding: $s16 $s16 $s20;
+    width: $s345;
+
+    .inputsWrapper {
+      gap: $s14;
+      margin-top: $s28;
+    }
+
+    .submitButton {
+      margin-top: $s52;
+    }
+  }
+}

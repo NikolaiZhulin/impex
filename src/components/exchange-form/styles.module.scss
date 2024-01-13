@@ -1,0 +1,224 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x12;
+  display: flex;
+  flex-direction: column;
+  padding: $x32 $x32 $x38;
+  width: 33.125vw;
+
+  .formTitle {
+    @include h4();
+  }
+
+  .infoText {
+    color: $mainRed;
+    font-size: $x16;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-top: $x32;
+  }
+
+
+  .inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+    margin-top: $x24;
+  }
+
+  .dropdownInputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $x20;
+    margin-top: $x22;
+
+    >:first-child {
+      position: relative;
+      z-index: 1111;
+    }
+  }
+
+  .userDataForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: $x32;
+
+    .useDataFormTitle {
+      @include h4();
+    }
+  }
+
+  .formButton {
+    margin-top: $x56;
+  }
+
+  .text {
+    @include h2();
+  }
+
+  .checkbox {
+    margin-top: $x18;
+  }
+
+  .recipientWalletInfo {
+    display: flex;
+    flex-direction: column;
+    gap: $x16;
+
+    .recipientWalletTitle {
+      color: #93929D;
+      font-family: Ubuntu;
+      font-size: $x18;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+    }
+
+    .recipientWalletContent {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .wallet {
+      color: #636363;
+      font-family: Ubuntu;
+      font-size: $x18;
+      font-style: normal;
+      font-weight: 400;
+      line-height: $x24;
+    }
+
+    .walletCopy {
+      color: #95E59B;
+      font-family: Ubuntu;
+      font-size: $x16;
+      font-style: normal;
+      font-weight: 400;
+      line-height: $x24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m12;
+    padding: $m32 $m32 $m38;
+    width: $m708;
+
+    .infoText {
+      font-size: $m16;
+      margin-top: $m32;
+    }
+
+
+    .inputsWrapper {
+      gap: $m18;
+      margin-top: $m20;
+    }
+
+    .dropdownInputsWrapper {
+      gap: $m18;
+      margin-top: $m18;
+    }
+
+    .userDataForm {
+      margin-top: $m32;
+    }
+
+    .formButton {
+      margin-top: $m56;
+    }
+
+    .checkbox {
+      margin-top: $m16;
+    }
+
+    .recipientWalletInfo {
+      gap: $m12;
+
+      .recipientWalletTitle {
+        font-size: $m20;
+      }
+
+
+      .wallet {
+        font-size: $m18;
+        line-height: $m24;
+      }
+
+      .walletCopy {
+        font-size: $m16;
+        line-height: $m24;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s12;
+    padding: $s18 $s16 $s24;
+    width: $s345;
+
+    .infoText {
+      font-size: $s14;
+      margin-top: $s18;
+    }
+
+
+    .inputsWrapper {
+      gap: $s12;
+      margin-top: $s14;
+    }
+
+    .dropdownInputsWrapper {
+      gap: $s12;
+      margin-top: $s8;
+    }
+
+    .userDataForm {
+      margin-top: $s22;
+    }
+
+    .formButton {
+      margin-top: $s40;
+    }
+
+    .checkbox {
+      margin-top: $s10;
+    }
+
+    .recipientWalletInfo {
+      gap: $s12;
+
+      .recipientWalletTitle {
+        font-size: $s14;
+      }
+
+      .recipientWalletContent {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: $s14;
+      }
+
+
+      .wallet {
+        font-size: $s16;
+        line-height: $s22;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .walletCopy {
+        font-size: $s16;
+        line-height: $s24;
+      }
+    }
+  }
+}

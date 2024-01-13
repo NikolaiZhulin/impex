@@ -1,0 +1,17 @@
+@import '@styles/helpers/all';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $x36;
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    gap: $m50;
+  }}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    gap: $s36;
+  }}

@@ -1,0 +1,6 @@
+@import '@styles/helpers/all';
+
+.linksList {
+  @include dFlex();
+  gap: $x6;
+}

@@ -1,0 +1,68 @@
+@import '@styles/helpers/all';
+
+.modal {
+  width: 26.25vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    @include h3();
+  }
+
+  .subTitle {
+    @include smallDescription();
+    font-size: $x16;
+    margin-top: $x34;
+    text-transform: uppercase;
+  }
+
+  .balanceTable {
+    margin-top: $x12;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .modal {
+    width: 60.417vw;
+  }
+
+  .container {
+    .title {
+      font-size: $m26;
+    }
+
+    .subTitle {
+      font-size: $m16;
+      margin-top: $m30;
+    }
+
+    .balanceTable {
+      margin-top: $m12;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .modal {
+    width: $s345;
+  }
+
+  .container {
+    .title {
+      font-size: $s20;
+    }
+
+    .subTitle {
+      font-size: $s16;
+      margin-top: $s26;
+    }
+
+    .balanceTable {
+      margin-top: $s12;
+    }
+  }
+}

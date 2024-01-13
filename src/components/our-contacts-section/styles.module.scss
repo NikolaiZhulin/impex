@@ -1,0 +1,153 @@
+@import '@styles/helpers/all';
+
+.container {
+  padding: $x88 0 $x106 0;
+  position: relative;
+  width: 100%;
+
+  .cardsContainer {
+    @include dFlex(flex-start,flex-start);
+    flex-direction: column;
+    gap: $x24;
+    margin-top: $x60;
+
+    .contactInformation {
+      display: flex;
+      gap: $x76;
+      position: relative;
+      z-index: 100;
+
+      .contactInformationItem {
+        display: flex;
+        flex-direction: column;
+        gap: $x8;
+      }
+
+      .title {
+        @include smallDescription(#636363);
+      }
+    }
+
+    .juristicDocuments {
+      display: flex;
+      flex-direction: column;
+      gap: $x16;
+      position: relative;
+      z-index: 100;
+
+      .row {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $x44;
+      }
+
+      .juristicDocumentsLink {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: $x6;
+
+        .documentIcon {
+          min-height: $x24;
+          min-width: $x24;
+          width: $x24;
+        }
+      }
+    }
+
+    .text {
+      @include smallDescription(#C0C0C0);
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    padding: $m46 0 $m70 0;
+
+    .cardsContainer {
+      @include dFlex(flex-start,flex-start);
+      flex-direction: row;
+      gap: $m24;
+      margin-top: $m56;
+
+      .contactInformation {
+        flex-direction: column;
+        gap: $m27;
+
+        .contactInformationItem {
+          gap: $m8;
+        }
+      }
+
+      .juristicDocuments {
+        gap: $m20;
+
+        .row {
+          align-items: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: $x44;
+        }
+
+        .juristicDocumentsLink {
+          align-items: flex-start;
+          display: flex;
+          gap: $m6;
+          width: 80%;
+
+          .documentIcon {
+            min-height: $m24;
+            min-width: $m24;
+            width: $m24;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    padding: $s48 0 $s60 0;
+
+    .cardsContainer {
+      flex-direction: column;
+      gap: $s18;
+      margin-top: $s32;
+
+      .contactInformation {
+        flex-direction: column;
+        gap: $s18;
+
+        .contactInformationItem {
+          gap: $s6;
+        }
+      }
+
+      .juristicDocuments {
+        gap: $s16;
+
+        .row {
+          gap: $s16;
+        }
+
+        .juristicDocumentsLink {
+          gap: $s6;
+          width: 100%;
+
+          .documentIcon {
+            min-height: $s24;
+            min-width: $s24;
+            width: $s24;
+          }
+        }
+      }
+
+      .text {
+        font-weight: 300;
+      }
+    }
+  }
+}

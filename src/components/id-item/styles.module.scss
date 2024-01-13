@@ -1,0 +1,24 @@
+@import '@styles/helpers/all';
+
+.idContainer {
+  border-bottom: 1px solid #909CFF;
+  color: #909CFF;
+  font-size: $x16;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $x24;
+}
+
+@include media-breakpoint-down($w860) {
+  .idContainer {
+    font-size: $m16;
+    line-height: $m24;
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .idContainer {
+    font-size: $s16;
+    line-height: $s24;
+  }
+}

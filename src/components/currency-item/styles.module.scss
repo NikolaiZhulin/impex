@@ -1,0 +1,95 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  padding: $x10 0;
+
+  .icon {
+    height: $x26;
+    width: $x26;
+  }
+
+  .slug {
+    color: #E6E5E5;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $x24;
+    margin-left: $x8;
+    text-transform: uppercase;
+  }
+
+  .name {
+    color: #93929D;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-left: $x44;
+  }
+
+  .price {
+    color: #F0F6FC;
+    font-family: Ubuntu;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-left: $x126;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    padding: $m10 0;
+
+    .icon {
+      height: $m26;
+      width: $m26;
+    }
+
+    .slug {
+      font-size: $m18;
+      line-height: $m24;
+      margin-left: $m8;
+    }
+
+    .name {
+      font-size: $m14;
+      margin-left: $m40;
+    }
+
+    .price {
+      font-size: $m18;
+      margin-left: $m96;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    padding: $s12 0;
+
+    .icon {
+      height: $s24;
+      width: $s24;
+    }
+
+    .slug {
+      font-size: $s16;
+      line-height: $m24;
+      margin-left: $s8;
+    }
+
+    .name {
+      font-size: $s14;
+      margin-left: $s40;
+    }
+
+    .price {
+      font-size: $s16;
+      margin-left: $s118;
+    }
+  }
+}

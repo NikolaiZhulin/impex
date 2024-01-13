@@ -1,0 +1,108 @@
+@import '@styles/helpers/all';
+
+.box {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: $x6;
+
+  .text {
+    color: #F2F3F7;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.container {
+  align-items: center;
+  border-radius: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  height: $x24;
+  justify-content: center;
+  position: relative;
+  transition: color 250ms ease-out;
+  user-select: none;
+  width: $x24;
+
+  input {
+    margin: 0;
+    padding: 0;
+  }
+
+  svg {
+    @include transition();
+    height: $x24;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: $x24;
+
+    &.checkGradientIcon {
+      @include transition();
+      opacity: 0;
+      z-index: 2;
+    }
+  }
+
+  &:hover {
+    svg {
+      &.checkGradientIcon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.containerChecked {
+    svg {
+      path {
+        fill: rgba(144, 156, 255, 1);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .box {
+    gap: $m6;
+
+    .text {
+      font-size: $m16;
+    }
+  }
+
+  .container {
+    height: $m24;
+    width: $m24;
+
+
+    svg {
+      height: $m24;
+      width: $m24;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .box {
+    gap: $s8;
+
+    .text {
+      font-size: $s14;
+    }
+  }
+
+  .container {
+    height: $s24;
+    min-width: $s24;
+    width: $s24;
+
+
+    svg {
+      height: $s24;
+      width: $s24;
+    }
+  }
+}

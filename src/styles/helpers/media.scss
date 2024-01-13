@@ -1,0 +1,13 @@
+@import 'variables';
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media only screen and (max-width: $breakpoint - 1) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

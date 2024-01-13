@@ -1,0 +1,135 @@
+@import '@styles/helpers/all';
+
+.container {
+  @include globalScrollBar();
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border: 1px solid #2B2B2B;
+  border-radius: $x12;
+  max-height: 100svh;
+  overflow: overlay;
+  padding: $x34 $x32 $x49 $x32;
+  position: fixed;
+  transition: transform 500ms ease-out;
+  width: 40vw;
+  z-index: 1000;
+}
+
+.left {
+  left: 0;
+  top: 0;
+  transform: translateX(-200%);
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.right {
+  right: 0;
+  top: 0;
+  transform: translateX(200%);
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.bottom {
+  left: 0;
+  top: 0;
+  transform: translateY(200%);
+
+  &.show {
+    transform: translateY(0);
+  }
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  transform: translateY(200%) translateX(-50%);
+
+  &.show {
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+.closeButton {
+  position: absolute;
+
+  right: $x32;
+  top: $x34;
+  z-index: 1;
+
+  >svg {
+    height: $x32;
+    width: $x32;
+  }
+
+  svg path {
+    @include transition();
+  }
+
+  &:hover {
+    svg path {
+      fill: #909CFF;
+    }
+  }
+}
+
+.overlay {
+  backdrop-filter: blur($x22);
+  background: rgba(18, 19, 20, 0.63);
+  display: none;
+  inset: 0;
+  position: fixed;
+
+  &.showOverlay {
+    display: block;
+    z-index: 999;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    border-radius: $m12;
+    padding: $m30 $m30 $m52;
+    width: $m708;
+  }
+
+  .closeButton {
+    right: $m30;
+    top: $m30;
+
+    > svg {
+      height: $m32;
+      width: $m32;
+    }
+  }
+
+  .overlay {
+    backdrop-filter: blur($m22);
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    border-radius: $s12;
+    padding: $s16 $s16 $s40;
+    width: $s345;
+  }
+
+  .closeButton {
+    right: $s16;
+    top: $s16;
+
+    > svg {
+      height: $s24;
+      width: $s24;
+    }
+  }
+
+  .overlay {
+    backdrop-filter: blur($s22);
+  }
+}

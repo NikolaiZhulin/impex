@@ -1,0 +1,215 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: $x4;
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  &.containerError {
+    .input {
+      border-color: $errorRed;
+    }
+
+    .labels {
+      .label {
+        color: $errorRed;
+      }
+    }
+  }
+
+  .inputWrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    .additionalComponent {
+      position: absolute;
+      right: $x5;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+
+  .input {
+    @include transition(border-color);
+    background: #080808;
+    border: 1px solid #2B2B2B;
+    border-radius: $x8;
+    caret-color: $mainWhite;
+    color: $mainWhite;
+    flex-shrink: 0;
+    font-size: $x22;
+    font-style: normal;
+    font-weight: 400;
+    height: $x50;
+    line-height: $x24;
+    outline: none;
+    padding: 0 $x24 0 $x24;
+    width: 100%;
+
+    &::placeholder {
+      color: #636363;
+    }
+
+    &:placeholder-shown ~ .label {
+      cursor: text;
+    }
+
+    &:hover {
+      border-color: #636363;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+      border-color: #636363;
+    }
+
+    &:focus:not(.withoutBorder) {
+      border-color: #636363;
+    }
+
+    &:not(:focus) ~ .label,
+    &:not(:focus-visible) ~ .label,
+    &:not(:focus-within) ~ .label {
+      color: #2B2B2B;
+    }
+
+    &:placeholder-shown ~ .label {
+      color: #2B2B2B;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+      box-shadow: 0 0 0 1000px #080808 inset !important;
+      -webkit-text-fill-color: $mainWhite;
+      transition: background-color 5000s ease-in-out 0s, border 250ms ease-out;
+    }
+
+    &:-webkit-autofill {
+      border: 1px solid #2B2B2B;
+    }
+
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+      border: 1px solid #2B2B2B;
+    }
+
+    &.withoutBorder {
+      border-color: transparent;
+    }
+  }
+
+  .labels {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .label {
+      color: #93929D;
+      font-size: $x18;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+
+      &.rightLabel {
+        font-size: $x16;
+      }
+    }
+  }
+
+  .errorText {
+    color: $errorRed;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $x16;
+  }
+
+  .errorAbsolute {
+    position: absolute;
+    right: 0;
+  }
+}
+
+
+
+@include media-breakpoint-down($w860) {
+  .container {
+    gap: $m4;
+
+    .inputWrapper {
+      .additionalComponent {
+        right: $m5;
+      }
+    }
+
+    .input {
+      border-radius: $m8;
+      font-size: $m20;
+      height: $m50;
+      line-height: 140%;
+      padding: 0 $m24;
+    }
+
+    .labels {
+      .label {
+        font-size: $m18;
+
+        &.rightLabel {
+          font-size: $m16;
+        }
+      }
+    }
+
+    .errorText {
+      font-size: $m14;
+      line-height: $m16;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    gap: $s4;
+
+    .inputWrapper {
+      .additionalComponent {
+        right: $s5;
+      }
+    }
+
+    .input {
+      border-radius: $s8;
+      font-size: $s16;
+      height: $s42;
+      padding: 0 $s12;
+    }
+
+    .labels {
+      .label {
+        font-size: $s16;
+        font-weight: 300;
+
+        &.rightLabel {
+          font-size: $s14;
+          position: absolute;
+          right: 0;
+          top: calc(100% + $s2);
+        }
+      }
+    }
+
+    .errorText {
+      font-size: $s14;
+      line-height: $s16;
+    }
+  }
+}

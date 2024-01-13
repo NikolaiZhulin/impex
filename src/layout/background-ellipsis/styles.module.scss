@@ -1,0 +1,360 @@
+@import '@styles/helpers/all';
+
+.ellipse {
+  position: absolute;
+  z-index: 0;
+}
+
+
+.ellipse1 {
+  background: rgba(205, 21, 251, 0.34);
+  border-radius: 55.104vw;
+  filter: blur(13.021vw);
+  height: 41.51vw;
+  right: -$x214;
+  top: -$x150;
+  width: 55.104vw;
+}
+
+.ellipse2 {
+  background: rgba(52, 62, 255, 0.24);
+  border-radius: 35.677vw;
+  filter: blur(13.021vw);
+  height: 26.927vw;
+  right: 38.854vw;
+  top: 16.458vw;
+  width: 35.677vw;
+}
+
+.ellipse3 {
+  background: rgba(52, 62, 255, 0.24);
+  border-radius: 35.677vw;
+  filter: blur($x250);
+  height: 26.927vw;
+  right: 73.333vw;
+  top: 23.229vw;
+  width: 35.677vw;
+}
+
+.ellipse4 {
+  background: rgba(67, 86, 254, 0.24);
+  border-radius: 43.854vw;
+  filter: blur($x250);
+  height: 27.031vw;
+  right: -5.104vw;
+  top: 32.396vw;
+  width: 43.854vw;
+}
+
+.ellipse5 {
+  background: radial-gradient(424.62% 67.2% at 4.39% 45.63%, rgba(177, 77, 255, 0.7) 35.6%, rgba(255, 224, 249, 0.7) 100%);
+  border-radius: 34.115vw;
+  filter: blur($x265);
+  height: $x350;
+  right: 68.75vw;
+  top: 66.875vw;
+  width: 34.115vw;
+}
+
+.ellipse6 {
+  background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+  border-radius: 38.229vw;
+  filter: blur(17.031vw);
+  height: 38.229vw;
+  right: -4.531vw;
+  top: 96.042vw;
+  width: 20.521vw;
+}
+
+.ellipse7 {
+  background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+  border-radius: 38.229vw;
+  filter: blur(17.031vw);
+  height: 38.229vw;
+  right: 77.344vw;
+  top: 130.052vw;
+  transform: rotate(21.612deg);
+  width: 20.521vw;
+}
+
+.ellipse8 {
+  background: rgba(205, 21, 251, 0.34);
+  border-radius: 45.469vw;
+  filter: blur($x250);
+  height: 45.469vw;
+  right: -9.219vw;
+  top: 139.063vw;
+  width: 30vw;
+}
+
+.ellipse9 {
+  background: rgba(52, 62, 255, 0.24);
+  border-radius: 43.229vw;
+  filter: blur($x250);
+  height: 26.927vw;
+  right: 67.969vw;
+  top: 203.542vw;
+  width: 43.229vw;
+}
+
+.ellipse10 {
+  background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+  border-radius: 38.229vw;
+  filter: blur(17.031vw);
+  height: 38.229vw;
+  right: -6.25vw;
+  top: 171.615vw;
+  transform: rotate(21.612deg);
+  width: 20.521vw;
+}
+
+
+@include media-breakpoint-down($w860) {
+  .ellipse1 {
+    background: rgba(205, 21, 251, 0.34);
+    border-radius: 85.938vw;
+    filter: blur($m250);
+    height: 64.714vw;
+    right: -30.99vw;
+    top: $m70;
+    width: 85.938vw;
+  }
+
+  .ellipse2 {
+    background: rgba(67, 86, 254, 0.24);
+    border-radius: 77.344vw;
+    filter: blur($m250);
+    height: 47.656vw;
+    right: 55.729vw;
+    top: 25vw;
+    width: 77.344vw;
+  }
+
+  .ellipse3 {
+    background: rgba(52, 62, 255, 0.24);
+    border-radius: 66.667vw;
+    filter: blur($m250);
+    height: 50.26vw;
+    right: 29.427vw;
+    top: 108.984vw;
+    width: 66.667vw;
+  }
+
+  .ellipse4 {
+    background: rgba(52, 62, 255, 0.24);
+    border-radius: 61.068vw;
+    filter: blur($m250);
+    height: 46.094vw;
+    right: -20.833vw;
+    top: 46.094vw;
+    width: 61.068vw;
+  }
+
+  //privacy page
+  //.ellipse5 {
+  //  right: 49.089vw;
+  //  top: 192.708vw;
+  //  width: 50.911vw;
+  //  height: 84.896vw;
+  //  border-radius: 84.896vw;
+  //  filter: blur($m250);
+  //  background: radial-gradient(424.62% 67.2% at 4.39% 45.63%, rgba(177, 77, 255, 0.30) 35.6%, rgba(255, 224, 249, 0.30) 100%);
+  //}
+
+  .ellipse5 {
+    background: radial-gradient(424.62% 67.2% at 4.39% 45.63%, rgba(177, 77, 255, 0.7) 35.6%, rgba(255, 224, 249, 0.7) 100%);
+    border-radius: 85.286vw;
+    filter: blur(34.505vw);
+    height: 45.573vw;
+    right: 21.875vw;
+    top: 223.047vw;
+    width: 85.286vw;
+  }
+
+  //privacy page
+  //.ellipse6 {
+  //  right: 0;
+  //  top: 304.557vw;
+  //  width: 54.167vw;
+  //  height: 82.031vw;
+  //  border-radius: 82.031vw;
+  //  background: rgba(205, 21, 251, 0.24);
+  //  filter: blur($m250);
+  //}
+
+  .ellipse6 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 65.625vw;
+    filter: blur(38.021vw);
+    height: 65.625vw;
+    right: -4.688vw;
+    top: 335.156vw;
+    width: 35.286vw;
+  }
+
+  //.ellipse7 {
+  //  right: 0;
+  //  top: 485.417vw;
+  //  width: 49.740vw;
+  //  height: 75.391vw;
+  //  border-radius: 75.391vw;
+  //  background: rgba(205, 21, 251, 0.24);
+  //  filter: blur($m250);
+  //}
+
+  .ellipse7 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 67.318vw;
+    filter: blur(38.021vw);
+    height: 67.318vw;
+    right: 57.292vw;
+    top: 421.354vw;
+    transform: rotate(21.612deg);
+    width: 36.068vw;
+  }
+
+  //.ellipse8 {
+  //  right: -5.469vw;
+  //  top: 614.063vw;
+  //  width: 38.411vw;
+  //  height: 71.615vw;
+  //  transform: rotate(6.814deg);
+  //  border-radius: 71.615vw;
+  //  background: linear-gradient(180deg, rgba(146, 255, 255, 0.70) 0%, rgba(177, 77, 255, 0.70) 100%);
+  //  filter: blur(36.068vw);
+  //}
+  //
+
+  .ellipse8 {
+    background: rgba(205, 21, 251, 0.34);
+    border-radius: 73.438vw;
+    filter: blur($m250);
+    height: 73.438vw;
+    right: 0;
+    top: 417.578vw;
+    width: 42.578vw;
+  }
+
+  .ellipse9 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 49.219vw;
+    filter: blur(29.557vw);
+    height: 49.219vw;
+    right: -2.344vw;
+    top: 485.286vw;
+    transform: rotate(21.612deg);
+    width: 26.432vw;
+  }
+
+  .ellipse10 {
+    background: rgba(52, 62, 255, 0.24);
+    border-radius: 54.557vw;
+    filter: blur(18.88vw);
+    height: 33.984vw;
+    right: 45.443vw;
+    top: 545.313vw;
+    width: 54.557vw;
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .ellipse1 {
+    background: rgba(205, 21, 251, 0.34);
+    border-radius: 65.867vw;
+    filter: blur(38.667vw);
+    height: 49.6vw;
+    right: 0;
+    top: 22.933vw;
+    width: 65.867vw;
+  }
+
+  .ellipse2 {
+    background: rgba(67, 86, 254, 0.24);
+    border-radius: 109.333vw;
+    filter: blur(38.667vw);
+    height: 59.2vw;
+    right: -$s15;
+    top: 85.867vw;
+    width: 109.333vw;
+  }
+
+  .ellipse3 {
+    background: rgba(52, 62, 255, 0.24);
+    border-radius: 95.733vw;
+    filter: blur(29.333vw);
+    height: 72.267vw;
+    right: 0;
+    top: 110.4vw;
+    width: 95.733vw;
+  }
+
+  .ellipse4 {
+    background: radial-gradient(424.62% 67.2% at 4.39% 45.63%, rgba(177, 77, 255, 0.7) 35.6%, rgba(255, 224, 249, 0.7) 100%);
+    border-radius: 174.667vw;
+    filter: blur(70.667vw);
+    height: 66.667vw;
+    right: -60vw;
+    top: 361.067vw;
+    width: 174.667vw;
+  }
+
+  .ellipse5 {
+    background: radial-gradient(424.62% 67.2% at 4.39% 45.63%, rgba(177, 77, 255, 0.7) 35.6%, rgba(255, 224, 249, 0.7) 100%);
+    border-radius: 99.467vw;
+    filter: blur(70.667vw);
+    height: 53.067vw;
+    right: -29.333vw;
+    top: 523.733vw;
+    width: 99.467vw;
+  }
+
+  .ellipse6 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 76.8vw;
+    filter: blur(49.867vw);
+    height: 76.8vw;
+    right: 0;
+    top: 628.267vw;
+    width: 41.333vw;
+  }
+
+  .ellipse7 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 82.4vw;
+    filter: blur(45.867vw);
+    height: 82.4vw;
+    right: 74.667vw;
+    top: 700vw;
+    width: 44.267vw;
+  }
+
+  .ellipse8 {
+    background: rgba(205, 21, 251, 0.34);
+    border-radius: 105.867vw;
+    filter: blur(40vw);
+    height: 105.867vw;
+    right: 0;
+    top: 769.6vw;
+    width: 61.6vw;
+  }
+
+  .ellipse9 {
+    background: linear-gradient(180deg, rgba(146, 255, 255, 0.7) 0%, rgba(177, 77, 255, 0.7) 100%);
+    border-radius: 100.533vw;
+    filter: blur(60.533vw);
+    height: 100.533vw;
+    right: 0;
+    top: 955.2vw;
+    width: 53.867vw;
+  }
+
+  .ellipse10 {
+    background: rgba(52, 62, 255, 0.24);
+    border-radius: 111.733vw;
+    filter: blur(38.667vw);
+    height: 69.6vw;
+    right: 11.733vw;
+    top: 1040.533vw;
+    width: 111.733vw;
+  }
+}

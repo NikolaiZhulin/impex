@@ -1,0 +1,23 @@
+@import '@styles/helpers/all';
+
+.sectionHeader {
+  @include dFlex(flex-start, flex-start);
+  flex-direction: column;
+  gap: $x4;
+
+  .text {
+    @include h2();
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .sectionHeader {
+    gap: $m6;
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .sectionHeader {
+    gap: $s9;
+  }
+}

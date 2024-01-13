@@ -1,0 +1,125 @@
+@import '@styles/helpers/all';
+
+.button {
+  @include transition();
+  align-items: center;
+  background: linear-gradient(91deg, #2B40FF -1.68%, #CD15FB 116.85%);
+  border: unset;
+  border-radius: $x8;
+  color: #FFF;
+  display: flex;
+  font-family: $secondaryFontFamily;
+  font-size: $x18;
+  font-style: normal;
+  font-weight: 700;
+  height: $x62;
+  justify-content: center;
+  line-height: $x24;
+  overflow: hidden;
+  padding: $x19 $x95;
+  position: relative;
+  width: auto;
+
+  >span {
+    white-space: nowrap;
+  }
+
+  &::before {
+    background: linear-gradient(271deg, rgba(255, 255, 255, 0.5) 0.57%, rgba(255, 255, 255, 0) 99.57%);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.25s ease-out opacity;
+    width: 100%;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:disabled {
+    background: #93929D;
+    color: #2B2B2B;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.outline {
+    span {
+      position: relative;
+      z-index: 100;
+    }
+
+    &::before {
+      background: #0C0C0C;
+      border-radius: $x7;
+      bottom: 1px;
+      content: '';
+      height: unset;
+      left: 1px;
+      opacity: 1;
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      width: unset;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &.green {
+    background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+    border: 1px solid #2B2B2B;
+    color: #95E59B;
+
+    &::before {
+      content: unset;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .button {
+    border-radius: $m8;
+    font-size: $m18;
+    height: $m60;
+    line-height: $m24;
+    padding: $m18 $m20;
+
+    &.outline {
+      &::before {
+        border-radius: 0.911vw;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .button {
+    border-radius: $s8;
+    font-size: $s15;
+    height: $s42;
+    line-height: $s24;
+    padding: $s9 $s20;
+
+    &.outline {
+      &::before {
+        border-radius: 1.867vw;
+      }
+    }
+  }
+}

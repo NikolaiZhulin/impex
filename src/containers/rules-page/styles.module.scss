@@ -1,0 +1,218 @@
+@import '@styles/helpers/all';
+
+.container {
+  .mainTitle {
+    @include h1();
+    margin-top: $x74;
+  }
+
+  .mainDescription {
+    border-bottom: 1px solid #2B2B2B;
+    margin-top: $x30;
+    padding-bottom: $x36;
+  }
+
+  .rules {
+    display: flex;
+    flex-direction: column;
+    gap: $x56;
+    margin-top: $x96;
+  }
+
+  .rulesPoint {
+    display: flex;
+    flex-direction: column;
+    gap: $x32;
+
+    .rulesPointTitle {
+      @include h2();
+      align-items: flex-start;
+      display: flex;
+      gap: $x15;
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $x16;
+  }
+
+  .pointNumber {
+    backdrop-filter: blur($x6);
+    background: linear-gradient(42deg, rgba(144, 156, 255, 0.2) -38.36%, rgba(144, 156, 255, 0.49) 94.35%);
+    background-clip: text;
+    background-clip: text;
+    font-family: Jura;
+    font-size: $x52;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    @include mediumDescription();
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $x30;
+    margin-top: $x50;
+
+    .contentTitle {
+      color: #FFF;
+      font-family: Jura;
+      font-size: $x28;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+    }
+
+    .contentPoint {
+      align-items: flex-start;
+      display: flex;
+      gap: $x18;
+
+      .bitcoinIcon {
+        height: $x32;
+        width: $x32;
+      }
+
+      .contentPointText {
+        color: #F2F3F7;
+        font-size: $x24;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+  }
+
+  .contactsSection {
+    margin-top: $x85;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    .mainTitle {
+      margin-top: $m48;
+    }
+
+    .mainDescription {
+      margin-top: $m24;
+      padding-bottom: $m28;
+    }
+
+    .rules {
+      gap: $m36;
+      margin-top: $m60;
+    }
+
+    .rulesPoint {
+      gap: $m26;
+
+      .rulesPointTitle {
+        font-size: $m32;
+        gap: $m15;
+      }
+    }
+
+    .textContainer {
+      gap: $m16;
+    }
+
+    .pointNumber {
+      backdrop-filter: blur($m6);
+      font-size: $m32;
+    }
+
+    .content {
+      gap: $m26;
+      margin-top: $m38;
+
+      .contentTitle {
+        font-size: $m22;
+      }
+
+      .contentPoint {
+        gap: $m18;
+
+        .bitcoinIcon {
+          height: $m32;
+          width: $m32;
+        }
+
+        .contentPointText {
+          font-size: $m20;
+        }
+      }
+    }
+
+    .contactsSection {
+      margin-top: $m108;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    .mainTitle {
+      margin-top: $s34;
+    }
+
+    .mainDescription {
+      margin-top: $s18;
+      padding-bottom: $s20;
+    }
+
+    .rules {
+      gap: $s30;
+      margin-top: $s30;
+    }
+
+    .rulesPoint {
+      gap: $s16;
+
+      .rulesPointTitle {
+        font-size: $s20;
+        gap: $s10;
+      }
+    }
+
+    .textContainer {
+      gap: $s12;
+    }
+
+    .pointNumber {
+      backdrop-filter: blur($s6);
+      font-size: $s22;
+    }
+
+    .content {
+      gap: $s16;
+      margin-top: $s24;
+
+      .contentTitle {
+        font-size: $s18;
+      }
+
+      .contentPoint {
+        gap: $s8;
+
+        .bitcoinIcon {
+          height: $s24;
+          min-width: $s24;
+          width: $s24;
+        }
+
+        .contentPointText {
+          font-size: $s16;
+        }
+      }
+    }
+
+    .contactsSection {
+      margin-top: $s50;
+    }
+  }
+}

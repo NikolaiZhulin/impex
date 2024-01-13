@@ -1,0 +1,95 @@
+@import '@styles/helpers/all';
+
+.cardContainer {
+  @include dFlex(flex-start, flex-start);
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), #0C0C0C;
+  border-radius: $x12;
+  flex-direction: column;
+  height: 17.813vw;
+  overflow: hidden;
+  padding: $x12 $x20;
+  position: relative;
+  width: 19.375vw;
+
+  .icon {
+    height: $x98;
+    left: -$x12;
+    position: relative;
+    width: $x98;
+  }
+
+  .title {
+    @include h4();
+    margin-top: $x20;
+  }
+
+  .text {
+    @include smallDescription();
+    margin-top: $x16;
+  }
+
+  .ornament {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: -$x6;
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .cardContainer {
+    border-radius: $m12;
+    height: 35.938vw;
+    padding: $m12 $m18;
+    width: 43.531vw;
+
+    .icon {
+      height: $m82;
+      left: -$m12;
+      width: $m82;
+    }
+
+    .title {
+      margin-top: $m10;
+    }
+
+    .text {
+      margin-top: $m12;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .cardContainer {
+    align-items: center;
+    border-radius: $s12;
+    display: grid;
+    grid-template-areas: 'icon title'
+      'text text';
+    grid-template-columns: $s52 auto;
+    grid-template-rows: $s52 auto;
+    height: 48vw;
+    padding: $s12 $s16;
+    width: 100%;
+
+
+
+    .icon {
+      grid-area: icon;
+      height: $s52;
+      left: -$s12;
+      width: $s52;
+    }
+
+    .title {
+      grid-area: title;
+      margin-top: 0;
+    }
+
+    .text {
+      align-self: start;
+      grid-area: text;
+    }
+  }
+}
