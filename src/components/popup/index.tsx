@@ -23,7 +23,6 @@ export const PortalWrapper = ({ children }: {children: ReactNode}) => {
 };
 
 export const Popup: FC<Props> = (props) => {
-
   const {
     isOpen, children, className, canClose = true, onClose, appearFrom,
   } = props;
