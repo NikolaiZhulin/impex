@@ -32,6 +32,14 @@
     position: absolute;
     right: 0;
     top: $x18;
+
+    &.admin {
+      right: 7.5vw;
+    }
+  }
+
+  .adminPopover {
+    margin-left: auto;
   }
 }
 
@@ -39,15 +47,21 @@
   .header {
     height: $m76;
 
+    .headerLogo {
+      margin-left: $m235;
+    }
+
     .headerContent {
       height: $m76;
       margin-left: $m30;
       margin-right: $m30;
       width: 100vw;
-    }
 
-    .headerLogo {
-      margin-left: $m235;
+      &.admin {
+        .headerLogo {
+          margin-left: 0;
+        }
+      }
     }
 
     .burgerButton {
@@ -69,6 +83,10 @@
     .languageDropdown {
       right: 0;
       top: $m18;
+
+      &.admin {
+        right: 18.75vw;
+      }
     }
   }
 }
@@ -97,6 +115,10 @@
     .languageDropdown {
       right: 0;
       top: $s12;
+
+      &.admin {
+        right: 38.4vw;
+      }
     }
   }
 }

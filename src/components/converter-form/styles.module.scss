@@ -31,11 +31,9 @@
     flex-direction: column;
     gap: $x22;
     margin-top: $x27;
+    position: relative;
+    z-index: 1111;
 
-    >:first-child {
-      position: relative;
-      z-index: 1111;
-    }
   }
 
   .formButton {

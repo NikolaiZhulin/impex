@@ -9,12 +9,16 @@
   overflow: hidden;
   position: relative;
 
+  &.admin {
+    padding-bottom: $x112;
+  }
+
   .nav {
     z-index: 1000;
   }
 
   .header {
-    z-index: 10;
+    z-index: 110;
   }
 
   .main {
@@ -33,6 +37,10 @@
 
 @include media-breakpoint-down($w860) {
   .box {
+    &.admin {
+      padding-bottom: $m70;
+    }
+
     .main {
       margin-left: $m30;
       margin-right: $m30;
@@ -42,6 +50,10 @@
 
 @include media-breakpoint-down($w600) {
   .box {
+    &.admin {
+      padding-bottom: $s40;
+    }
+
     .main {
       margin-left: $s16;
       margin-right: $s16;

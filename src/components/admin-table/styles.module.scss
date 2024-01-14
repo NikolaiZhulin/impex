@@ -5,6 +5,8 @@
   flex-direction: column;
   gap: $x16;
   margin-top: $x25;
+  position: relative;
+  z-index: 2;
 }
 
 @include media-breakpoint-down($w860) {

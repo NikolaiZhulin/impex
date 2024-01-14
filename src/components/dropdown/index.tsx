@@ -1,43 +1,64 @@
-import React, { FC } from 'react';
-import { Listbox } from '@headlessui/react';
+import React, { FC, ReactNode, useState } from 'react';
 import cn from 'classnames';
-import { DropdownItem } from '@components/dropdown/dropdown-item';
 import { ReactComponent as ChevronDown } from 'public/images/icons/chevron-down.svg';
+import Select, {
+  components, DropdownIndicatorProps, MultiValue,
+} from 'react-select';
 import styles from './styles.module.scss';
 
+type Option = {
+  label: React.ReactNode;
+  value: React.ReactNode;
+}
+
 type Props = {
-  selected: {text: string, value: string, icon: string}
-  setSelected: (value: {text: string, value: string, icon: string}) => void
-  options: {text: string, value: string, icon: string}[]
+  options: Option[]
+  setIsOpen?: (value: boolean) => void
   className?: string
 }
 
 export const Dropdown: FC<Props> = (props) => {
   const {
-    options, setSelected, selected, className,
+    options, setIsOpen, className,
   } = props;
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [option, setOption] = useState< MultiValue<Option> | null>(null);
+
+  const handleOnOpen = () => {
+    setIsDropdownOpen(true);
+    setIsOpen?.(true);
+  };
+  const handleOnClose = () => {
+    setIsDropdownOpen(false);
+    setIsOpen?.(false);
+  };
+
+  const DropdownIndicator = (
+    prop: DropdownIndicatorProps<{ label: ReactNode; value: ReactNode; }, true>,
+  ) => (
+    <components.DropdownIndicator {...prop}>
+      <ChevronDown className={styles.icon} />
+    </components.DropdownIndicator>
+  );
+
+  const handleOnChange = (selectedOption: MultiValue<Option> | null) => {
+    setOption(selectedOption);
+  };
+
   return (
-    <Listbox value={selected} onChange={setSelected}>
-      <div className={cn(styles.listBoxWrapper, className)}>
-
-        <Listbox.Button className={styles.listBoxButton}>
-          <DropdownItem text={selected.text} icon={selected.icon} />
-          <ChevronDown />
-        </Listbox.Button>
-
-        <Listbox.Options className={styles.optionsList}>
-          {options.map((option) => (
-            <Listbox.Option
-              className={styles.listBoxItem}
-              value={option}
-            >
-              <DropdownItem text={option.text} icon={option.icon} />
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-
-      </div>
-    </Listbox>
+    <Select
+      className={cn(styles.dropdown, { [styles.open]: isDropdownOpen }, className)}
+      classNamePrefix="select"
+      defaultValue={options[0]}
+      name="color"
+      options={options}
+      onChange={handleOnChange}
+      value={option || options[0]}
+      unstyled
+      onMenuOpen={handleOnOpen}
+      onMenuClose={handleOnClose}
+      components={{ DropdownIndicator }}
+    />
   );
 };

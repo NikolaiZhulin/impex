@@ -1,5 +1,5 @@
 import React, {
-  DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode,
+  DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode, useState,
 } from 'react';
 import cn from 'classnames';
 import { Input } from '@components/input';
@@ -18,19 +18,16 @@ type Props = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputE
   icon?: ReactNode
   iconContainerClassName?: string
   dropdownValue?: number
-  options: {text: string, value: string, icon: string}[]
-  selectedOption: {text: string, value: string, icon: string}
-  setSelectedOption: (value: {text: string, value: string, icon: string}) => void
+  options: { label: ReactNode, value: ReactNode }[]
 }
 
 export const DropdownInput: FC<Props> = (props) => {
   const {
     className,
     options,
-    selectedOption,
-    setSelectedOption,
     ...inputProps
   } = props;
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={cn(styles.container, className)}>
@@ -38,8 +35,10 @@ export const DropdownInput: FC<Props> = (props) => {
         {...inputProps}
         type="number"
         className={styles.input}
-        additionalComponent={<Dropdown options={options} setSelected={setSelectedOption} selected={selectedOption} />}
       />
+      <div className={cn(styles.dropdownWrapper, { [styles.open]: isOpen })}>
+        <Dropdown setIsOpen={setIsOpen} options={options} />
+      </div>
     </div>
   );
 };

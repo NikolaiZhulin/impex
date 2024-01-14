@@ -1,0 +1,87 @@
+@import '@styles/helpers/all';
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .slugWrapper {
+    align-items: center;
+    display: flex;
+    gap: $x8;
+  }
+
+  .icon {
+    height: $x26;
+    width: $x26;
+  }
+
+  .slug {
+    color: #E6E5E5;
+    font-size: $x18;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $x24;
+    text-transform: uppercase;
+  }
+
+  .name {
+    color: #93929D;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    padding: $m10 0;
+
+    .slugWrapper {
+      gap: $m8;
+    }
+
+    .icon {
+      height: $m26;
+      width: $m26;
+    }
+
+    .slug {
+      font-size: $m18;
+      line-height: $m24;
+    }
+
+    .name {
+      font-size: $m14;
+      margin-left: $m40;
+    }
+
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    padding: $s6 0;
+
+    .slugWrapper {
+      gap: $s6;
+    }
+
+    .icon {
+      height: $s22;
+      width: $s22;
+    }
+
+    .slug {
+      font-size: $s14;
+      line-height: $m24;
+    }
+
+    .name {
+      font-size: $s14;
+      margin-left: $s40;
+    }
+  }
+}

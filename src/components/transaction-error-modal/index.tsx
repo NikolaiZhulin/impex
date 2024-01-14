@@ -10,7 +10,6 @@ import styles from './styles.module.scss';
 type Props = {
   isOpen: boolean
   onClose: () => void
-  transactionId: number
 }
 
 const info = {
@@ -23,12 +22,12 @@ const info = {
 const userInfo = { name: 'Иванов Иван Иванович', email: 'alex.parfenkov@gmail.com', phone: '+7 (00) 123-45-67' };
 
 export const TransactionErrorModal: FC<Props> = (props) => {
-  const { isOpen, onClose, transactionId } = props;
+  const { isOpen, onClose } = props;
 
   return (
     <Popup appearFrom="center" isOpen={isOpen} onClose={onClose} className={styles.modal}>
       <div className={styles.container}>
-        <h3 className={styles.title}>id&nbsp;{transactionId}</h3>
+        <h3 className={styles.title}><FormattedMessage id="" defaultMessage="Ошибка перевода" /></h3>
         <div className={styles.transactionInfoWrapper}>
           <div className={styles.infoItem}>
             <span className={styles.subTitle}>

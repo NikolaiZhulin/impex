@@ -26,11 +26,17 @@
     position: relative;
     width: 100%;
 
+    input {
+      flex: 1;
+    }
+
     .additionalComponent {
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
       position: absolute;
-      right: $x5;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 1px;
+      width: inherit;
       z-index: 1;
     }
   }

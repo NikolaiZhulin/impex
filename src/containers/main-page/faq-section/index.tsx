@@ -7,7 +7,7 @@ import { Accordion } from '@components/accordion';
 import styles from './styles.module.scss';
 
 export const FaqSection = () => (
-  <section className={styles.container}>
+  <section className={styles.container} id="faq">
     <SectionHeader text={<FormattedMessage id="faq" defaultMessage="Часто задаваемые вопросы" />} labelText="FAQ" />
     <div className={styles.accordionsContainer}>
       {FAQ_QUESTIONS.map(({ text, head }) => (

@@ -6,7 +6,7 @@ import { COMPANY_VALUES } from '@containers/main-page/values-section/constants';
 import styles from './styles.module.scss';
 
 export const ValuesSection = () => (
-  <section className={styles.container}>
+  <section className={styles.container} id="advantages">
     <SectionHeader
       text={<FormattedMessage id="company_values" defaultMessage="Ценности компании Impex Crypto" />}
       labelText="ПРЕИМУЩЕСТВА"

@@ -7,8 +7,8 @@
 
   svg {
     fill: #636363;
-    height: $x24;
-    width: $x24;
+    height: $x24 !important;
+    width: $x24 !important;
 
     path {
       fill: #636363;
@@ -28,8 +28,8 @@
     width: $m100;
 
     svg {
-      height: $m24;
-      width: $m24;
+      height: $m24 !important;
+      width: $m24 !important;
     }
 
     :global {
@@ -42,17 +42,20 @@
 
 @include media-breakpoint-down($w600) {
   .smallDropdown {
-    height: $s52;
+    height: $s44;
+    min-height: $s44;
     width: 24vw;
 
     svg {
-      height: $s24;
-      width: $s24;
+      height: $s24 !important;
+      width: $s24 !important;
     }
 
     :global {
       .select__control {
-        padding: $s8 $s10 $s8 $s16;
+        height: $s44;
+        min-height: $s44;
+        padding: $s4 $s10 $s4 $s16;
       }
     }
   }

@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@components/breadcrumbs';
 import { Layout } from '../../layout';
 
 import styles from './styles.module.scss';
+import { scrollToElement } from '../../lib/scroll-to-element';
 
 export const RulesPage = () => (
   <Layout>
@@ -35,27 +36,32 @@ export const RulesPage = () => (
         <h4 className={styles.contentTitle}>
           <FormattedMessage id="community_rules" defaultMessage="Содержание" />
         </h4>
-        <div className={styles.contentPoint}><BitcoinIcon className={styles.bitcoinIcon} />
+        <div className={styles.contentPoint} onClick={() => scrollToElement('ad-ban')}>
+          <BitcoinIcon className={styles.bitcoinIcon} />
           <span className={styles.contentPointText}>
             <FormattedMessage id="" defaultMessage="Запрет на спам и рекламу" />
           </span>
         </div>
-        <div className={styles.contentPoint}><BitcoinIcon className={styles.bitcoinIcon} />
+        <div className={styles.contentPoint} onClick={() => scrollToElement('scam_ban')}>
+          <BitcoinIcon className={styles.bitcoinIcon} />
           <span className={styles.contentPointText}>
             <FormattedMessage id="" defaultMessage="Запрет на распространение мошеннических схем" />
           </span>
         </div>
-        <div className={styles.contentPoint}><BitcoinIcon className={styles.bitcoinIcon} />
+        <div className={styles.contentPoint} onClick={() => scrollToElement('personal-data-ban')}>
+          <BitcoinIcon className={styles.bitcoinIcon} />
           <span className={styles.contentPointText}>
             <FormattedMessage id="" defaultMessage="Запрет на публикацию личных данных" />
           </span>
         </div>
-        <div className={styles.contentPoint}><BitcoinIcon className={styles.bitcoinIcon} />
+        <div className={styles.contentPoint} onClick={() => scrollToElement('safety-ban')}>
+          <BitcoinIcon className={styles.bitcoinIcon} />
           <span className={styles.contentPointText}>
             <FormattedMessage id="" defaultMessage="Соблюдение правил безопасности при обмене криптовалюты" />
           </span>
         </div>
-        <div className={styles.contentPoint}><BitcoinIcon className={styles.bitcoinIcon} />
+        <div className={styles.contentPoint} onClick={() => scrollToElement('safety-guarantee')}>
+          <BitcoinIcon className={styles.bitcoinIcon} />
           <span className={styles.contentPointText}>
             <FormattedMessage id="" defaultMessage="Гарантия безопасности для пользователей Impex Crypto" />
           </span>
@@ -64,7 +70,7 @@ export const RulesPage = () => (
 
       <div className={styles.rules}>
         <div className={styles.rulesPoint}>
-          <h2 className={styles.rulesPointTitle}>
+          <h2 className={styles.rulesPointTitle} id="ad-ban">
             <span className={styles.pointNumber}>01</span>
             <FormattedMessage id="" defaultMessage="Запрет на спам и рекламу" />
           </h2>
@@ -108,7 +114,7 @@ export const RulesPage = () => (
         </div>
 
         <div className={styles.rulesPoint}>
-          <h2 className={styles.rulesPointTitle}>
+          <h2 className={styles.rulesPointTitle} id="scam_ban">
             <span className={styles.pointNumber}>02</span>
             <FormattedMessage id="" defaultMessage="Запрет на распространение мошеннических схем" />
           </h2>
@@ -143,7 +149,7 @@ export const RulesPage = () => (
         </div>
 
         <div className={styles.rulesPoint}>
-          <h2 className={styles.rulesPointTitle}>
+          <h2 className={styles.rulesPointTitle} id="personal-data-ban">
             <span className={styles.pointNumber}>03</span>
             <FormattedMessage id="" defaultMessage="Запрет на публикацию личных данных" />
           </h2>
@@ -177,7 +183,7 @@ export const RulesPage = () => (
         </div>
 
         <div className={styles.rulesPoint}>
-          <h2 className={styles.rulesPointTitle}>
+          <h2 className={styles.rulesPointTitle} id="safety-ban">
             <span className={styles.pointNumber}>04</span>
             <FormattedMessage id="" defaultMessage="Соблюдение правил безопасности при обмене криптовалюты" />
           </h2>
@@ -210,7 +216,7 @@ export const RulesPage = () => (
         </div>
 
         <div className={styles.rulesPoint}>
-          <h2 className={styles.rulesPointTitle}>
+          <h2 className={styles.rulesPointTitle} id="safety-guarantee">
             <span className={styles.pointNumber}>05</span>
             <FormattedMessage id="" defaultMessage="Гарантия безопасности для пользователей Impex Crypto" />
           </h2>

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import cn from 'classnames';
 import { SmallDropdown } from '@components/small-dropdown';
 import { FormattedMessage } from 'react-intl';
+import { Pagination } from '@components/pagination';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -37,6 +38,7 @@ export const AdminTableFooter: FC<Props> = (props) => {
         <div className={styles.tableFooterText}>
           1-10&nbsp;<FormattedMessage id="" defaultMessage="из" />&nbsp;100
         </div>
+        <Pagination />
       </div>
     </div>
   );

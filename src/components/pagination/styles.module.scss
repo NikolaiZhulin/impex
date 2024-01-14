@@ -1,0 +1,35 @@
+@import '@styles/helpers/all';
+
+.pagination {
+  align-items: center;
+  display: flex;
+  gap: $x8;
+
+  .buttonsBlock {
+    align-items: center;
+    display: flex;
+    gap: $x8;
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .pagination {
+    gap: $m8;
+
+    .buttonsBlock {
+      gap: $m8;
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .pagination {
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+
+    .buttonsBlock {
+      gap: $s8;
+    }
+  }
+}

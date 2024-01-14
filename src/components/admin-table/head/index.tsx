@@ -9,6 +9,7 @@ import { DropdownItemWithCount } from '@components/dropdown-item-with-count';
 import { Input } from '@components/input';
 import styles from './styles.module.scss';
 
+const TransactionHistoryModal = dynamic(() => import('@components/transaction-history-modal').then((mod) => mod.TransactionHistoryModal));
 const BalanceModal = dynamic(() => import('@components/balance-modal').then((mod) => mod.BalanceModal));
 
 export type Props = {
@@ -27,10 +28,12 @@ export const Head: FC<Props> = (props) => {
     className,
   } = props;
   const [isBalanceModalOpen, setBalanceModalOpen] = useState(false);
+  const [isTransactionHistoryModalOpen, setTransactionHistoryModalOpen] = useState(false);
 
   return (
     <>
-      <BalanceModal isOpen={isBalanceModalOpen} onClose={() => setBalanceModalOpen(false)} />
+      {isTransactionHistoryModalOpen && <TransactionHistoryModal isOpen={isTransactionHistoryModalOpen} onClose={() => setTransactionHistoryModalOpen(false)} transactionId={67416873461239} />}
+      {isBalanceModalOpen && <BalanceModal isOpen={isBalanceModalOpen} onClose={() => setBalanceModalOpen(false)} />}
       <div className={cn(styles.container, className)}>
         <div className={styles.leftBlock}>
           <RequestBanner className={styles.requestBanner} requestQty={6} />
@@ -44,13 +47,11 @@ export const Head: FC<Props> = (props) => {
           <div className={styles.rightBottomBlock}>
             <Input wrapClassName={styles.filterInput} placeholder="ДД/ММ/ГГГГ" label="Начало периода" />
             <Input wrapClassName={styles.filterInput} placeholder="ДД/ММ/ГГГГ" label="Конец периода" />
-            <Button className={cn(styles.button, styles.transactionsButton)} green onClick={() => setBalanceModalOpen(true)}>
+            <Button className={cn(styles.button, styles.transactionsButton)} green onClick={() => setTransactionHistoryModalOpen(true)}>
               <FormattedMessage id="" defaultMessage="Вывод транзакций" />
             </Button>
           </div>
         </div>
-        {/* <SmallDropdown options={PAGE_OPTIONS} /> */}
-
       </div>
     </>
   );

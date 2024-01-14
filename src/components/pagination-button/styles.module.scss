@@ -1,0 +1,64 @@
+@import '@styles/helpers/all';
+
+.button {
+  @include transition();
+  align-items: center;
+  background: #636363;
+  border-radius: $x6;
+  display: flex;
+  justify-content: center;
+  padding: $x6 $x10;
+
+  &:hover {
+    background: #4A4A4A;
+  }
+
+  &:active {
+    background: #303030;
+  }
+
+  .icon {
+    height: $x24;
+    width: $x24;
+
+    &.left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.disabled {
+    background: #B0B0B0;
+
+    .icon {
+      path {
+        fill: #93929D;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .button {
+    border-radius: $m6;
+    padding: $m6 $m10;
+
+    .icon {
+      height: $m24;
+      width: $m24;
+    }
+
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .button {
+    border-radius: $s6;
+    padding: $s4 $s8;
+
+    .icon {
+      height: $s24;
+      width: $s24;
+    }
+
+  }
+}

@@ -35,11 +35,8 @@
     flex-direction: column;
     gap: $x20;
     margin-top: $x22;
-
-    >:first-child {
-      position: relative;
-      z-index: 1111;
-    }
+    position: relative;
+    z-index: 1111;
   }
 
   .userDataForm {

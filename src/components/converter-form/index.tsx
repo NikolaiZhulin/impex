@@ -6,6 +6,7 @@ import { Tabs } from '@components/tabs';
 import { DropdownInput } from '@components/dropdown-input';
 import { useRouter } from 'next/router';
 import { ROUTES } from '@constants/routes.constants';
+import { CurrencyDropdownItem } from '@components/currency-dropdown-item';
 import styles from './styles.module.scss';
 
 export type Props = {
@@ -13,18 +14,17 @@ export type Props = {
 }
 
 const OPTIONS = [
-  { text: 'RUB', value: '1', icon: '/images/icons/ruble.svg' },
-  { text: 'BTC', value: '2', icon: '/images/icons/ruble.svg' },
-  { text: 'ETC', value: '3', icon: '/images/icons/ruble.svg' },
-  { text: 'QWE', value: '4', icon: '/images/icons/ruble.svg' },
-  { text: 'RUB', value: '5', icon: '/images/icons/ruble.svg' },
+  { label: <CurrencyDropdownItem icon="/images/icons/ruble.svg" slug="ВТС" name="Bitcoin" isFullWidth />, value: '1' },
+  { label: <CurrencyDropdownItem icon="/images/icons/ruble.svg" slug="QWE" name="Bitcoin" isFullWidth />, value: '2' },
+  { label: <CurrencyDropdownItem icon="/images/icons/ruble.svg" slug="RUB" name="Bitcoin" isFullWidth />, value: '3' },
+  { label: <CurrencyDropdownItem icon="/images/icons/ruble.svg" slug="EEE" name="Bitcoin" isFullWidth />, value: '4' },
+  { label: <CurrencyDropdownItem icon="/images/icons/ruble.svg" slug="SJS" name="Bitcoin" isFullWidth />, value: '5' },
 ];
 
 export const ConverterForm: FC<Props> = (props) => {
   const { className } = props;
   const router = useRouter();
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const [selected, setSelected] = useState(OPTIONS[0]);
 
   const redirectToExchangeCurrencyPage = () => {
     router.push(ROUTES.EXCHANGE_CURRENCY).catch(null);
@@ -48,14 +48,10 @@ export const ConverterForm: FC<Props> = (props) => {
             label="Вы отправляете"
             rightLabel="1 SOL ≈ 5,421.00938185 RUB"
             options={OPTIONS}
-            selectedOption={selected}
-            setSelectedOption={setSelected}
           />
           <DropdownInput
             label="Вы получаете"
             options={OPTIONS}
-            selectedOption={selected}
-            setSelectedOption={setSelected}
           />
         </div>
         <Button className={styles.formButton} onClick={redirectToExchangeCurrencyPage} isFullWidth>

@@ -56,6 +56,7 @@
     .footerRightBlock {
       gap: $m32;
       justify-content: space-between;
+      width: 100%;
     }
 
     .rowSettings {
@@ -80,7 +81,10 @@
     }
 
     .footerRightBlock {
-      display: none;
+      .rowSettings,
+      .tableFooterText {
+        display: none;
+      }
     }
   }
 }

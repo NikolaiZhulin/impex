@@ -20,7 +20,7 @@ const withImageConfig = {
     RAFFLE_GROUP_ID: process.env.NEXT_PUBLIC_RAFFLE_GROUP_ID,
     ALCHEMY_PROVIDER_API_KEY: process.env.NEXT_PUBLIC_ALCHEMY_PROVIDER_API_KEY
   },
-  trailingSlash: true,
+  trailingSlash: false,
   images: {
     disableStaticImages: true
   },

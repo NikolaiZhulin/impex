@@ -48,6 +48,12 @@
         display: flex;
         gap: $x6;
 
+        &:hover {
+          .text {
+            color: #909CFF;
+          }
+        }
+
         .documentIcon {
           min-height: $x24;
           min-width: $x24;
@@ -57,6 +63,7 @@
     }
 
     .text {
+      @include transition();
       @include smallDescription(#C0C0C0);
     }
   }

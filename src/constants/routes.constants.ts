@@ -2,10 +2,10 @@ import { defineMessages } from 'react-intl';
 
 export const ROUTES = {
   HOME_PAGE: '/',
-  ADVANTAGES: '/advantages',
-  SCHEME_OF_WORK: '/scheme-of-work',
-  FAQ: '/faq',
-  CONTACTS: '/contacts',
+  ADVANTAGES: '#advantages',
+  SCHEME_OF_WORK: '#scheme-of-work',
+  FAQ: '/#faq',
+  CONTACTS: '#contacts',
   RULES: '/rules',
   PRIVACY_POLICY: '/privacy-policy',
   TERMS_AND_CONDITIONS: '/terms-and-conditions',

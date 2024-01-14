@@ -1,8 +1,41 @@
 @import '@styles/helpers/all';
 
 .container {
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+  width: 100%;
+
   .input {
     padding-right: $x170;
+  }
+
+  .dropdownWrapper {
+    border-left: 1px solid #2B2B2B;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+
+    [data-attribute='name'] {
+      display: none;
+    }
+
+    &.open {
+      width: 100%;
+
+      [data-attribute='name'] {
+        display: flex;
+      }
+
+      [data-attribute='icon'] {
+        height: $x22;
+        width: $x22;
+      }
+
+      [data-attribute='slug'] {
+        font-size: $x14;
+      }
+    }
   }
 }
 
@@ -13,6 +46,19 @@
     .input {
       padding-right: 21.484vw;
     }
+
+    .dropdownWrapper {
+      &.open {
+        [data-attribute='icon'] {
+          height: $m22;
+          width: $m22;
+        }
+
+        [data-attribute='slug'] {
+          font-size: $m14;
+        }
+      }
+    }
   }
 }
 
@@ -20,6 +66,19 @@
   .container {
     .input {
       padding-right: 32.933vw;
+    }
+
+    .dropdownWrapper {
+      &.open {
+        [data-attribute='icon'] {
+          height: $s22;
+          width: $s22;
+        }
+
+        [data-attribute='slug'] {
+          font-size: $s14;
+        }
+      }
     }
   }
 }

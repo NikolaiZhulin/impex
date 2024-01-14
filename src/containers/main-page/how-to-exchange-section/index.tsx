@@ -7,7 +7,7 @@ import { NumberedItem } from '@components/numbered-item';
 import styles from './styles.module.scss';
 
 export const HowToExchangeSection = () => (
-  <section className={styles.container}>
+  <section className={styles.container} id="scheme-of-work">
     <SectionHeader
       text={<FormattedMessage id="how_to_exchange" defaultMessage="Как обменять криптовалюту" />}
       labelText="СХЕМА РАБОТЫ"

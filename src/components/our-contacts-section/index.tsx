@@ -12,7 +12,10 @@ export const OurContactsSection = () => {
   const isTablet = Number(width) <= 768;
 
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      id="contacts"
+    >
       <SectionHeader
         text={<FormattedMessage id="our_contacts" defaultMessage="Наши контакты" />}
         labelText="МЫ НА СВЯЗИ"

@@ -69,15 +69,30 @@
 
     .contentPoint {
       align-items: flex-start;
+      cursor: pointer;
       display: flex;
       gap: $x18;
 
+      &:hover {
+        .contentPointText {
+          color: #909CFF;
+        }
+
+        .bitcoinIcon {
+          path {
+            fill: #909CFF;
+          }
+        }
+      }
+
       .bitcoinIcon {
+        @include transition();
         height: $x32;
         width: $x32;
       }
 
       .contentPointText {
+        @include transition();
         color: #F2F3F7;
         font-size: $x24;
         font-style: normal;

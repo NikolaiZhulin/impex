@@ -1,125 +1,279 @@
 @import '@styles/helpers/all';
 
-.listBoxWrapper {
-  background: #080808;
-  border-left: 1px solid #2B2B2B;
-  position: relative;
+.dropdown {
+  border-radius: $x6;
+  color: #F2F3F7;
+  font-size: $x18;
+  height: $x50;
+  width: 8.021vw;
 
-  .listBoxButton {
-    @include dFlex();
-    border-radius: $x8;
-    color: $mainWhite;
-    font-size: $x18;
-    gap: $x10;
-    height: $x48;
-    max-width: 7.552vw;
-    min-width: 7.552vw;
-    padding: 0 $x15 0 $x20;
+  :global {
+    border: 1px solid transparent;
 
-    > svg {
-      @include dFlex();
-      height: $x32;
-      width: $x32;
+    .select__indicators {
+      transition: transform 0.3s ease;
     }
-
   }
 
-  .optionsList {
-    background: #080808;
-    border-radius: 0 0 $x8 $x8;
-    left: 0;
-    padding-bottom: $x10;
-    position: absolute;
-    top: 100%;
+  &.open {
     width: 100%;
-    z-index: 100;
+
+    :global {
+      border: 1px solid #909CFF;
+      box-shadow: 1px 1px 6px 0 rgba(98, 93, 232, 0.6), 0 -1px 6px 0 rgba(226, 112, 255, 0.22);
+      width: 100%;
+
+      .select__single-value {
+        display: none;
+      }
+
+      .select__indicators {
+        transform: rotate(180deg);
+      }
+
+      .select__control {
+        padding-left: $x40;
+        position: relative;
+
+        &::after {
+          background: #080808;
+          border-radius: $x8 $x8 0 0;
+          content: '';
+          height: calc(100% + $x80);
+          left: -$x18;
+          position: absolute;
+          right: -$x18;
+          top: -$x40;
+          width: calc(100% + $x36);
+          z-index: -1;
+        }
+
+        &::before {
+          content: url('/images/icons/search.svg');
+          height: $x24;
+          left: $x12;
+          position: absolute;
+          top: $x12;
+          width: $x24;
+        }
+      }
+
+      .select__menu {
+        &::after {
+          background: #080808;
+          border-radius: $x8;
+          content: '';
+          height: calc(100%);
+          left: -$x18;
+          position: absolute;
+          right: -$x18;
+          top: 0;
+          width: calc(100% + $x36);
+          z-index: -1;
+        }
+      }
+    }
   }
 
-  .listBoxItem {
-    @include dFlex(center, flex-start);
-    cursor: pointer;
-    padding: $x8 $x20;
-    position: relative;
 
-    &::before {
-      @include transition(opacity);
-      background: linear-gradient(92deg, rgba(47, 85, 147, 0.12) 1.95%, rgba(47, 85, 147, 0) 98.05%);
-      bottom: 0;
-      content: '';
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: -1;
+  .icon {
+    @include transition();
+    align-items: center;
+    display: flex;
+    height: $x32;
+    width: $x32;
+  }
+
+  :global {
+    .select__control {
+      align-items: center;
+      background: #080808;
+      border-radius: $x6;
+      display: flex;
+      height: 2.45vw;
+      min-height: 2.45vw;
+      padding: 0 $x18;
     }
 
-    &:hover::before {
-      opacity: 1;
-      z-index: 1;
+    .select__indicator {
+      @include transition();
     }
 
-    &.active {
-      background: linear-gradient(92deg, rgba(47, 85, 147, 0.12) 1.95%, rgba(47, 85, 147, 0) 98.05%);
+    .select__menu {
+      border-radius: 0 0 $x6 $x6;
+      border-top: 0;
+      margin-top: $x10 !important;
+    }
+
+    .select__menu-list {
+      background: #080808;
+    }
+
+    .select__option {
+      @include transition();
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      height: $x49;
+      padding: $x12 $x18;
+      position: relative;
+
+      &::before {
+        @include transition(opacity);
+        background: linear-gradient(92deg, rgba(61, 47, 147, 0.32) 1.95%, rgba(61, 47, 147, 0) 98.05%);
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: #909CFF;
+
+        &::before {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
     }
   }
 }
 
-
 @include media-breakpoint-down($w860) {
-  .listBoxWrapper {
-    .listBoxButton {
-      border-radius: $m8;
-      font-size: $m18;
-      gap: $m10;
-      height: $m48;
-      max-width: 18.88vw;
-      min-width: 18.88vw;
-      padding: 0 $m15 0 $m20;
+  .dropdown {
+    border-radius: $m6;
+    font-size: $m18;
+    height: $m50;
+    width: 21.484vw;
 
-      > svg {
-        height: $m32;
-        width: $m32;
+    &.open {
+      :global {
+        .select__control {
+          padding-left: $m40;
+
+          &::after {
+            border-radius: $m8 $m8 0 0;
+            height: calc(100% + $m80);
+            left: -$m18;
+            right: -$m18;
+            top: -$m40;
+            width: calc(100% + $m36);
+          }
+
+          &::before {
+            height: $m24;
+            left: $m12;
+            top: $m12;
+            width: $m24;
+          }
+        }
+
+        .select__menu {
+          &::after {
+            border-radius: $m8;
+            left: -$m18;
+            right: -$m18;
+            width: calc(100% + $m36);
+          }
+        }
+      }
+    }
+
+
+    .icon {
+      height: $m32;
+      width: $m32;
+    }
+
+    :global {
+      .select__control {
+        border-radius: $m6;
+        height: $m48;
+        min-height: $m48;
+        padding: 0 $m18;
       }
 
-    }
+      .select__menu {
+        border-radius: 0 0 $m6 $m6;
+        margin-top: $m10 !important;
+      }
 
-    .optionsList {
-      border-radius: 0 0 $m8 $m8;
-      padding-bottom: $m10;
-    }
-
-    .listBoxItem {
-      padding: $m8 $m20;
+      .select__option {
+        height: $m49;
+        padding: $m12 $m18;
+      }
     }
   }
 }
 
 @include media-breakpoint-down($w600) {
-  .listBoxWrapper {
-    .listBoxButton {
-      border-radius: $s8;
-      font-size: $s14;
-      gap: $m14;
-      height: $s40;
-      max-width: 30.667vw;
-      min-width: 30.667vw;
-      padding: 0 $s6 0 $s10;
+  .dropdown {
+    border-radius: $s6;
+    font-size: $s18;
+    height: $s42 !important;
+    width: 30.933vw;
 
-      > svg {
-        height: $s24;
-        width: $s24;
+    &.open {
+      :global {
+        .select__control {
+          padding-left: $s40;
+
+          &::after {
+            border-radius: $s8 $s8 0 0;
+            height: calc(100% + 21.333vw);
+            left: -$s18;
+            right: -$s18;
+            top: -$s40;
+            width: calc(100% + $s36);
+          }
+
+          &::before {
+            height: $s24;
+            left: $s8;
+            top: $s8;
+            width: $s24;
+          }
+        }
+
+        .select__menu {
+          &::after {
+            border-radius: $s8;
+            left: -$s18;
+            right: -$s18;
+            top: -$s3;
+            width: calc(100% + $s36);
+          }
+        }
+      }
+    }
+
+
+    .icon {
+      height: $s32;
+      width: $s32;
+    }
+
+    :global {
+      .select__control {
+        border-radius: $s6;
+        height: $s40 !important;
+        min-height: $s40 !important;
+        padding: 0 $s10;
       }
 
-    }
+      .select__menu {
+        border-radius: 0 0 $s6 $s6;
+        margin-top: $s10 !important;
+      }
 
-    .optionsList {
-      border-radius: 0 0 $s8 $s8;
-      padding-bottom: $s10;
-    }
-
-    .listBoxItem {
-      padding: $s8 $s10;
+      .select__option {
+        height: $s49;
+        padding: $s8 $s10;
+      }
     }
   }
 }

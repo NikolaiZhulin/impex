@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React, { PropsWithChildren, useState } from 'react';
 import dynamic from 'next/dynamic';
-import Header from './header';
 import styles from './styles.module.scss';
 import BackgroundEllipsis from './background-ellipsis';
+import { Header } from './header';
 
 const NavBar = dynamic(() => import('./header/navbar').then((mod) => mod.NavBar));
 const Footer = dynamic(() => import('./footer'));
@@ -19,7 +19,7 @@ export const Layout = ({
   const [isNavMenuActive, setNavMenuActive] = useState(false);
 
   return (
-    <div className={cn(styles.box, className)}>
+    <div className={cn(styles.box, { [styles.admin]: isAdminLayout }, className)}>
       {!isAdminLayout && <NavBar className={styles.nav} isOpen={isNavMenuActive} onClose={() => setNavMenuActive(false)} />}
       <Header className={styles.header} onOpenNavBar={() => setNavMenuActive(true)} isAdminLayout={isAdminLayout} />
       <main className={styles.main}>

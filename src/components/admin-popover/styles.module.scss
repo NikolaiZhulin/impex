@@ -1,0 +1,160 @@
+@import '@styles/helpers/all';
+
+.container {
+  background: transparent;
+  position: relative;
+  width: 6.25vw;
+
+  .popoverButton {
+    align-items: center;
+    color: #93929D;
+    display: flex;
+    font-size: $x14;
+    font-style: normal;
+    font-weight: 400;
+    gap: $x8;
+    line-height: $x24;
+    text-transform: uppercase;
+
+    .adminInfo {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: $x4;
+
+      .role {
+        color: #636363;
+      }
+    }
+
+    .chevronDown {
+      height: $x24;
+      width: $x24;
+    }
+  }
+
+  .panel {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    left: 0;
+    padding: $x4 0;
+    position: absolute;
+    top: calc(100% + $x8);
+    width: 100%;
+
+
+    .button {
+      align-items: center;
+      color: #93929D;
+      display: flex;
+      font-family: Ubuntu;
+      font-size: $x18;
+      font-style: normal;
+      font-weight: 400;
+      gap: $x2;
+      line-height: $x24;
+      position: relative;
+      text-transform: uppercase;
+      z-index: 100;
+    }
+
+    &::before {
+      @include transition();
+      background: linear-gradient(92deg, rgba(47, 85, 147, 0.12) 1.95%, rgba(47, 85, 147, 0) 98.05%);
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .exitIcon {
+      height: $x24;
+      width: $x24;;
+    }
+  }
+}
+
+@include media-breakpoint-down($w860) {
+  .container {
+    width: 15.625vw;
+
+    .popoverButton {
+      font-size: $m14;
+      gap: $m8;
+      line-height: $m24;
+
+      .adminInfo {
+        gap: $m4;
+      }
+
+      .chevronDown {
+        height: $m24;
+        width: $m24;
+      }
+    }
+
+    .panel {
+      padding: $m4 0;
+      top: 100%;
+
+      .button {
+        font-size: $m18;
+        gap: $m2;
+        line-height: $m24;
+      }
+
+      .exitIcon {
+        height: $m24;
+        width: $m24;;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($w600) {
+  .container {
+    width: 32vw;
+
+    .popoverButton {
+      font-size: $s14;
+      gap: $s8;
+      line-height: $s24;
+
+      .adminInfo {
+        gap: $s4;
+      }
+
+      .chevronDown {
+        height: $s24;
+        width: $s24;
+      }
+    }
+
+    .panel {
+      padding: $s4 0;
+      top: 100%;
+
+      .button {
+        font-size: $s18;
+        gap: $s2;
+        line-height: $s24;
+      }
+
+      .exitIcon {
+        height: $s24;
+        width: $s24;;
+      }
+    }
+  }
+}

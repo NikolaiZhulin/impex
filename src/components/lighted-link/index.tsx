@@ -6,14 +6,23 @@ import styles from './styles.module.scss';
 type Props ={
   href: string
   text: ReactNode
+  onClick?: () => void
   isActive?: boolean
   className?: string
 }
 
 const LightedLink: FC<Props> = (props) => {
   const {
-    href, text, isActive, className,
+    href, text, isActive, onClick, className,
   } = props;
+
+  if (onClick) {
+    return (
+      <button onClick={onClick} className={cn(styles.link, { [styles.active]: isActive }, className)}>
+        {text}
+      </button>
+    );
+  }
 
   return (
     <Link href={href || ''} className={cn(styles.link, { [styles.active]: isActive }, className)}>

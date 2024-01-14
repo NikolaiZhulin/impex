@@ -39,7 +39,7 @@
       display: flex;
       height: $x50;
       min-height: $x50;
-      padding: $x10 $x18;
+      padding: 0 $x18;
 
       &.select__control--menu-is-open {
         border-radius: $x6 $x6 0 0;
@@ -113,7 +113,7 @@
         border-radius: $m6;
         height: $m50;
         min-height: $m50;
-        padding: $m10 $m18;
+        padding: 0 $m18;
 
         &.select__control--menu-is-open {
           border-radius: $m6 $m6 0 0;
@@ -151,7 +151,7 @@
         border-radius: $s6;
         height: $s50;
         min-height: $s50;
-        padding: $s10 $s18;
+        padding: 0 $s18;
 
         &.select__control--menu-is-open {
           border-radius: $s6 $s6 0 0;

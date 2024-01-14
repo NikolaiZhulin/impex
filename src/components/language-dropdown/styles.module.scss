@@ -1,14 +1,31 @@
 @import '@styles/helpers/all';
 
 .listBoxWrapper {
-  background: linear-gradient(117deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 0.01%, rgba(255, 255, 255, 0) 97.72%), linear-gradient(157deg, rgba(66, 46, 147, 0.23) 5.54%, rgba(42, 32, 147, 0.27) 85.34%);
-  border: 1px solid #909CFF;
+  background: linear-gradient(91deg, #909CFF -1.68%, #E270FF 116.85%);
   border-radius: $x4;
   font-size: $x18;
+  overflow: hidden;
   padding: $x10 0;
   position: relative;
 
+  button {
+    position: relative;
+    z-index: 100;
+  }
 
+  &::before {
+    background: #0C0C0C;
+    border-radius: $x4;
+    bottom: 1px;
+    content: '';
+    height: unset;
+    left: 1px;
+    opacity: 1;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: unset;
+  }
 
   .listBoxButton {
     @include dFlex();
@@ -26,6 +43,7 @@
   }
 
   .listBoxItem {
+    @include transition();
     @include dFlex(center, flex-end);
     cursor: pointer;
     padding: $x4 $x16;
@@ -44,10 +62,16 @@
       z-index: -1;
     }
 
-    &:hover::before {
-      opacity: 1;
-      z-index: 1;
+    &:hover {
+      color: #909CFF;
+
+      &::before {
+        opacity: 1;
+        z-index: 1;
+
+      }
     }
+
 
     &.active {
       background: linear-gradient(92deg, rgba(47, 85, 147, 0.12) 1.95%, rgba(47, 85, 147, 0) 98.05%);
@@ -63,7 +87,9 @@
     padding: $m10 0;
     position: relative;
 
-
+    &::before {
+      border-radius: $m4;
+    }
 
     .listBoxButton {
       font-size: $m18;
@@ -91,7 +117,9 @@
     padding: $s6 0;
     position: relative;
 
-
+    &::before {
+      border-radius: $s5;
+    }
 
     .listBoxButton {
       font-size: $s16;
