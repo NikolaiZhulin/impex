@@ -80,11 +80,12 @@
     background: rgba(205, 21, 251, 0.34);
     border-radius: 45.469vw;
     bottom: 0;
-
     filter: blur(6.51vw);
     height: 6.25vw;
     left: 6.771vw;
     position: absolute;
+    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     width: 45.469vw;
   }
 
@@ -96,6 +97,8 @@
     height: 6.25vw;
     position: absolute;
     right: 8.438vw;
+    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     width: 36.979vw;
   }
 }

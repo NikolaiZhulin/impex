@@ -2,8 +2,8 @@ import cn from 'classnames';
 import React, { PropsWithChildren, useState } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './styles.module.scss';
-import BackgroundEllipsis from './background-ellipsis';
 import { Header } from './header';
+import { BackgroundEllipsis } from './background-ellipsis';
 
 const NavBar = dynamic(() => import('./header/navbar').then((mod) => mod.NavBar));
 const Footer = dynamic(() => import('./footer'));
